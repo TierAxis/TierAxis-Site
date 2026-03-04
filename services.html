@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TierAxis — Service Pillars</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--white:#fffefe;--dark:#4b4b43;--gold:#f4b42a;--light:#e5e5e5;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--white);color:var(--dark);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5vw;background:rgba(255,254,254,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--light);}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.08em;color:var(--dark);text-decoration:none;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{text-decoration:none;font-size:0.85rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--dark);opacity:0.7;transition:opacity 0.2s;}
+.nav-links a:hover,.nav-links a.active{opacity:1;}
+.nav-cta{background:var(--gold);color:var(--dark)!important;opacity:1!important;padding:0.55rem 1.3rem;border-radius:2px;font-weight:500!important;transition:background 0.2s,color 0.2s,transform 0.15s!important;}
+.nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;transform:translateY(-1px);}
+
+.section-label{font-size:0.72rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.6rem;}
+.section-label::before{content:'';display:block;width:1.5rem;height:1px;background:var(--gold);}
+
+.btn-primary{background:var(--dark);color:var(--white);padding:1rem 2.2rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--dark);transition:background 0.22s,color 0.22s,transform 0.15s;display:inline-block;}
+.btn-primary:hover{background:var(--gold);border-color:var(--gold);color:var(--dark);transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--white);padding:1rem 2.2rem;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:2px solid rgba(255,254,254,0.3);transition:border-color 0.22s,background 0.22s,transform 0.15s;display:inline-block;}
+.btn-outline:hover{border-color:var(--gold);background:var(--gold);color:var(--dark);transform:translateY(-2px);}
+
+.hero{min-height:60vh;display:flex;flex-direction:column;justify-content:flex-end;padding:10rem 8vw 5rem;background:var(--dark);position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(244,180,42,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.06) 1px,transparent 1px);background-size:60px 60px;}
+.hero::after{content:'SERVICES';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:22vw;color:rgba(255,254,254,0.03);bottom:-3vw;right:-2vw;line-height:1;pointer-events:none;letter-spacing:0.02em;}
+.hero-inner{position:relative;z-index:2;max-width:900px;}
+.hero-eyebrow{font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
+.hero-eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.5rem,7vw,7rem);line-height:0.92;letter-spacing:0.01em;color:var(--white);margin-bottom:2rem;}
+.hero-title em{font-style:normal;color:var(--gold);}
+.hero-sub{font-family:'Fraunces',serif;font-size:clamp(1rem,1.4vw,1.2rem);font-weight:300;line-height:1.75;color:rgba(255,254,254,0.6);max-width:60ch;margin-bottom:3rem;}
+
+.pillar-nav{position:sticky;top:72px;z-index:50;background:var(--white);border-bottom:1px solid var(--light);display:flex;align-items:center;overflow-x:auto;padding:0 8vw;}
+.pillar-nav-item{font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--dark);opacity:0.45;text-decoration:none;padding:1.2rem 2rem;border-bottom:2px solid transparent;white-space:nowrap;transition:opacity 0.2s,border-color 0.2s;display:flex;align-items:center;gap:0.6rem;}
+.pillar-nav-item:hover{opacity:0.8;}
+.pillar-nav-item.active{opacity:1;border-bottom-color:var(--gold);}
+.pillar-nav-num{color:var(--gold);font-family:'Bebas Neue',sans-serif;font-size:1rem;}
+
+.service-section{display:grid;grid-template-columns:1fr 1.5fr;min-height:100vh;border-bottom:1px solid var(--light);}
+.service-section:nth-child(even){direction:rtl;}
+.service-section:nth-child(even)>*{direction:ltr;}
+.service-sidebar{padding:6rem 4vw 6rem 8vw;display:flex;flex-direction:column;justify-content:center;position:sticky;height:fit-content;align-self:start;top:140px;}
+.service-section:nth-child(even) .service-sidebar{padding:6rem 8vw 6rem 4vw;}
+.service-num-large{font-family:'Bebas Neue',sans-serif;font-size:8rem;color:rgba(75,75,67,0.07);line-height:1;margin-bottom:-1rem;}
+.service-sidebar-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4vw,3.8rem);line-height:1;letter-spacing:0.02em;color:var(--dark);margin-bottom:1.5rem;}
+.service-sidebar-body{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:300;line-height:1.8;color:var(--dark);opacity:0.7;margin-bottom:2.5rem;}
+.service-content{padding:6rem 8vw 6rem 4vw;display:flex;flex-direction:column;justify-content:center;border-left:1px solid var(--light);}
+.service-section:nth-child(even) .service-content{border-left:none;border-right:1px solid var(--light);padding:6rem 4vw 6rem 8vw;}
+
+.service-section.dark{background:var(--dark);border-bottom:none;}
+.service-section.dark .service-sidebar-title{color:var(--white);}
+.service-section.dark .service-sidebar-body{color:rgba(255,254,254,0.6);}
+.service-section.dark .service-num-large{color:rgba(255,254,254,0.05);}
+.service-section.dark .service-content{border-left-color:rgba(255,254,254,0.08);}
+.service-section.dark .section-label{color:var(--gold);}
+.service-section.dark .section-label::before{background:var(--gold);}
+
+.subsection{margin-bottom:3rem;}
+.subsection:last-of-type{margin-bottom:0;}
+.subsection-label{font-size:0.7rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(75,75,67,0.4);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.8rem;}
+.subsection-label::after{content:'';flex:1;height:1px;background:rgba(75,75,67,0.12);}
+.subsection-list{list-style:none;display:flex;flex-direction:column;}
+.subsection-item{padding:1.1rem 0;border-bottom:1px solid rgba(75,75,67,0.08);display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start;font-size:0.9rem;line-height:1.65;color:var(--dark);opacity:0.75;}
+.service-section.dark .subsection-item{color:rgba(255,254,254,0.6);border-bottom-color:rgba(255,254,254,0.06);}
+.subsection-item::before{content:'→';color:var(--gold);font-size:0.85rem;margin-top:0.1rem;flex-shrink:0;}
+.service-section.dark .subsection-label{color:rgba(255,254,254,0.35);}
+.service-section.dark .subsection-label::after{background:rgba(255,254,254,0.1);}
+
+.service-callout{background:var(--gold);padding:2rem 2.5rem;margin-top:3rem;font-family:'Fraunces',serif;font-size:1.1rem;font-style:italic;font-weight:300;line-height:1.6;color:var(--dark);}
+.service-callout.dark-callout{background:rgba(244,180,42,0.12);color:rgba(255,254,254,0.8);border-left:3px solid var(--gold);}
+
+.bench-domains{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,254,254,0.08);margin-top:2rem;}
+.bench-domain{background:rgba(75,75,67,0.4);padding:1.5rem 1.8rem;transition:background 0.2s;}
+.bench-domain:hover{background:rgba(75,75,67,0.6);}
+.bench-domain-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.06em;color:var(--white);margin-bottom:0.3rem;}
+.bench-domain-sub{font-size:0.75rem;color:rgba(255,254,254,0.4);letter-spacing:0.05em;}
+
+.lets-talk{background:var(--dark);padding:7rem 8vw;position:relative;overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;}
+.lets-talk::after{content:'TALK';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:28vw;color:rgba(255,254,254,0.025);bottom:-4vw;right:-2vw;line-height:1;pointer-events:none;}
+.lets-talk-label{color:var(--gold)!important;}
+.lets-talk-label::before{background:var(--gold)!important;}
+.lets-talk-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,5rem);line-height:0.95;color:var(--white);margin-top:1rem;}
+.lets-talk-heading em{font-style:normal;color:var(--gold);}
+.lets-talk-body{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:300;line-height:1.8;color:rgba(255,254,254,0.6);margin-bottom:2.5rem;}
+.lets-talk-email{display:flex;align-items:center;gap:0.75rem;font-size:0.85rem;font-weight:500;letter-spacing:0.05em;color:rgba(255,254,254,0.35);text-decoration:none;margin-top:1.5rem;transition:color 0.2s;}
+.lets-talk-email:hover{color:var(--gold);}
+.lets-talk-email::before{content:'✉';}
+
+footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.08em;color:rgba(255,254,254,0.4);text-decoration:none;}
+.footer-logo span{color:var(--gold);}
+.footer-links{display:flex;gap:2rem;list-style:none;}
+.footer-links a{font-size:0.75rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,254,254,0.3);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-copy{font-size:0.72rem;color:rgba(255,254,254,0.2);letter-spacing:0.05em;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.fade-up{opacity:0;animation:fadeUp 0.8s ease forwards;}
+.delay-1{animation-delay:0.1s;}.delay-2{animation-delay:0.25s;}.delay-3{animation-delay:0.4s;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+@media(max-width:900px){
+  .service-section{grid-template-columns:1fr;direction:ltr!important;}
+  .service-section:nth-child(even)>*{direction:ltr;}
+  .service-sidebar{position:static;padding:4rem 6vw 2rem!important;}
+  .service-content{padding:2rem 6vw 4rem!important;border-left:none!important;border-right:none!important;border-top:1px solid rgba(75,75,67,0.1);}
+  .service-section.dark .service-content{border-top-color:rgba(255,254,254,0.08);}
+  .lets-talk{grid-template-columns:1fr;}
+  .bench-domains{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Tier<span>Axis</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="contact.html" class="nav-cta">Engage TierAxis</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow fade-up delay-1">Service Pillars</p>
+    <h1 class="hero-title fade-up delay-2">Partner Engine.<br>Marketplace.<br><em>Bench. Working Together.</em></h1>
+    <p class="hero-sub fade-up delay-3">TierAxis focuses on the moments where AWS, Marketplace, funding, and delivery all need to align — building the support structure around your initiatives so they can move with clarity and pace.</p>
+    <a href="contact.html" class="btn-outline fade-up delay-3">Engage TierAxis</a>
+  </div>
+</section>
+
+<nav class="pillar-nav" aria-label="Service pillars">
+  <a class="pillar-nav-item active" href="#aws"><span class="pillar-nav-num">01</span> AWS Partner Engine</a>
+  <a class="pillar-nav-item" href="#marketplace"><span class="pillar-nav-num">02</span> Cloud Marketplace</a>
+  <a class="pillar-nav-item" href="#bench"><span class="pillar-nav-num">03</span> Bench, On Purpose</a>
+</nav>
+
+<section class="service-section" id="aws">
+  <div class="service-sidebar reveal">
+    <div class="service-num-large">01</div>
+    <p class="section-label">AWS Partner Engine</p>
+    <h2 class="service-sidebar-title">Navigating AWS<br>as a partner,<br>done well.</h2>
+    <p class="service-sidebar-body">The programs, funding paths, and co-sell options are powerful — but only if they are lined up with what your business is actually trying to do.</p>
+    <a href="contact.html" class="btn-primary">Leverage Your AWS Partnership</a>
+  </div>
+  <div class="service-content reveal" style="transition-delay:0.1s">
+    <div class="subsection">
+      <div class="subsection-label">For New AWS Partners</div>
+      <ul class="subsection-list">
+        <li class="subsection-item">Choosing the right partner path and programs to pursue first.</li>
+        <li class="subsection-item">Laying out a practical plan to get to launch, competencies, or funding.</li>
+        <li class="subsection-item">Setting up simple motions with AWS sellers so early wins are visible.</li>
+      </ul>
+    </div>
+    <div class="subsection" style="margin-top:2.5rem">
+      <div class="subsection-label">For Established AWS Partners</div>
+      <ul class="subsection-list">
+        <li class="subsection-item">Tuning co-sell motions with the field so opportunities move instead of stalling.</li>
+        <li class="subsection-item">Making better use of funding, incentives, and new programs that fit your stage.</li>
+        <li class="subsection-item">Aligning internal sales and delivery teams so the AWS motion is part of how you already sell, not a separate track.</li>
+      </ul>
+    </div>
+    <div class="service-callout">Whether you are starting from zero or trying to grow an established motion — we help the partnership show up in pipeline.</div>
+  </div>
+</section>
+
+<section class="service-section" id="marketplace">
+  <div class="service-sidebar reveal">
+    <div class="service-num-large">02</div>
+    <p class="section-label">Cloud Marketplace</p>
+    <h2 class="service-sidebar-title">Marketplace as<br>a real revenue<br>lane.</h2>
+    <p class="service-sidebar-body">Selling through AWS Marketplace lets you meet enterprise buyers where they already transact — consolidated billing, streamlined procurement, and AWS spend commitments working for you.</p>
+    <a href="contact.html" class="btn-primary">Accelerate Your Pipeline</a>
+  </div>
+  <div class="service-content reveal" style="transition-delay:0.1s">
+    <div class="subsection">
+      <div class="subsection-label">What This Looks Like</div>
+      <ul class="subsection-list">
+        <li class="subsection-item">Deciding where Marketplace fits in your go-to-market and when to use it in a deal.</li>
+        <li class="subsection-item">Making sure listings, entitlements, and reporting plug into your existing product, finance, and ops.</li>
+        <li class="subsection-item">Using private offers and co-sell so large deals can actually close through Marketplace.</li>
+      </ul>
+    </div>
+    <div class="service-callout">Most teams struggle to make Marketplace a durable part of how they sell, forecast, and fulfill — rather than a side experiment. We change that.</div>
+  </div>
+</section>
+
+<section class="service-section dark" id="bench">
+  <div class="service-sidebar reveal">
+    <div class="service-num-large">03</div>
+    <p class="section-label">Bench, On Purpose</p>
+    <h2 class="service-sidebar-title">The right team<br>for the right<br>initiative.</h2>
+    <p class="service-sidebar-body">Putting the right team around the right project is often the hardest part — especially when you need deep domain experience and trusted execution, not just more hands.</p>
+    <a href="contact.html" class="btn-outline">Let's Design Your Bench</a>
+  </div>
+  <div class="service-content reveal" style="transition-delay:0.1s">
+    <div class="subsection">
+      <div class="subsection-label">What We Do</div>
+      <ul class="subsection-list">
+        <li class="subsection-item">Stand up project teams that can actually deliver in complex, domain-heavy environments.</li>
+        <li class="subsection-item">Bring in delivery partners already proven in fintech, government, AI, and VC-backed ecosystems.</li>
+        <li class="subsection-item">Turn "we don't have the right team for this" into "we know exactly who should run this."</li>
+      </ul>
+    </div>
+    <div class="subsection" style="margin-top:2.5rem">
+      <div class="subsection-label">Domain Coverage</div>
+      <div class="bench-domains">
+        <div class="bench-domain"><div class="bench-domain-title">Software Dev</div><div class="bench-domain-sub">Engineering and Architecture</div></div>
+        <div class="bench-domain"><div class="bench-domain-title">AI and ML</div><div class="bench-domain-sub">Applied Intelligence</div></div>
+        <div class="bench-domain"><div class="bench-domain-title">Fintech and Finance</div><div class="bench-domain-sub">Regulated Environments</div></div>
+        <div class="bench-domain"><div class="bench-domain-title">Government</div><div class="bench-domain-sub">Public Sector Delivery</div></div>
+        <div class="bench-domain"><div class="bench-domain-title">GTM</div><div class="bench-domain-sub">Go-to-Market Execution</div></div>
+        <div class="bench-domain"><div class="bench-domain-title">VC-Backed</div><div class="bench-domain-sub">Startup Ecosystems</div></div>
+      </div>
+    </div>
+    <div class="service-callout dark-callout" style="margin-top:2.5rem">Your Vision. Our Work. We assemble teams only once we understand the initiative.</div>
+  </div>
+</section>
+
+<section class="lets-talk" id="talk">
+  <div class="reveal">
+    <p class="section-label lets-talk-label">Let's Talk</p>
+    <h2 class="lets-talk-heading">Most initiatives touch<br>more than <em>one pillar.</em></h2>
+  </div>
+  <div class="reveal" style="transition-delay:0.15s;position:relative;z-index:2;">
+    <p class="lets-talk-body">TierAxis is built to work across all three pillars when you need more than a single team or firm. Bring us one initiative that matters and we will walk it with you.</p>
+    <a href="contact.html" class="btn-outline">Engage TierAxis</a>
+    <a href="mailto:info@TierAxis.com" class="lets-talk-email">info@TierAxis.com</a>
+  </div>
+</section>
+
+<footer>
+  <a class="footer-logo" href="index.html">Tier<span>Axis</span></a>
+  <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#">Privacy Policy</a></li>
+    <li><a href="#">Terms</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 TierAxis • All rights reserved</p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
+},{threshold:0.1});
+reveals.forEach(r => obs.observe(r));
+
+const sections = document.querySelectorAll('.service-section');
+const navItems = document.querySelectorAll('.pillar-nav-item');
+const sectionObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      navItems.forEach(n => n.classList.remove('active'));
+      const match = document.querySelector('.pillar-nav-item[href="#'+e.target.id+'"]');
+      if(match) match.classList.add('active');
+    }
+  });
+},{threshold:0.4});
+sections.forEach(s => sectionObs.observe(s));
+</script>
+</body>
+</html>
