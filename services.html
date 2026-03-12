@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TierAxis — Service Pillars</title>
+<title>TierAxis Service Pillars</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -79,6 +79,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .service-callout{background:var(--gold);padding:2rem 2.5rem;margin-top:3rem;font-family:'Fraunces',serif;font-size:1.1rem;font-style:italic;font-weight:300;line-height:1.6;color:var(--dark);}
 .service-callout.dark-callout{background:rgba(244,180,42,0.12);color:rgba(255,254,254,0.8);border-left:3px solid var(--gold);}
 
+.stats-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--light);margin-top:3rem;}
+.stat-block{background:var(--white);padding:1.8rem 1.5rem;}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;color:var(--gold);line-height:1;margin-bottom:0.35rem;}
+.stat-label{font-size:0.78rem;font-weight:500;letter-spacing:0.06em;color:var(--dark);line-height:1.4;margin-bottom:0.3rem;}
+.stat-source{font-size:0.65rem;color:var(--dark);opacity:0.35;letter-spacing:0.04em;}
+
+.stats-strip.dark-stats{background:rgba(244,180,42,0.15);}
+.stats-strip.dark-stats .stat-block{background:rgba(75,75,67,0.35);}
+.stats-strip.dark-stats .stat-num{color:var(--gold);}
+.stats-strip.dark-stats .stat-label{color:rgba(255,254,254,0.75);}
+.stats-strip.dark-stats .stat-source{color:rgba(255,254,254,0.25);}
+
+@media(max-width:900px){.stats-strip{grid-template-columns:1fr 1fr;}}
+
 .bench-domains{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,254,254,0.08);margin-top:2rem;}
 .bench-domain{background:rgba(75,75,67,0.4);padding:1.5rem 1.8rem;transition:background 0.2s;}
 .bench-domain:hover{background:rgba(75,75,67,0.6);}
@@ -139,7 +153,7 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
   <div class="hero-inner">
     <p class="hero-eyebrow fade-up delay-1">Service Pillars</p>
     <h1 class="hero-title fade-up delay-2">Partner Engine.<br>Marketplace.<br><em>Bench. Working Together.</em></h1>
-    <p class="hero-sub fade-up delay-3">TierAxis focuses on the moments where AWS, Marketplace, funding, and delivery all need to align, building the support structure around your initiatives so they can move with clarity and pace.</p>
+    <p class="hero-sub fade-up delay-3">TierAxis focuses on the moments where AWS, Marketplace, funding, and delivery all need to align building the support structure around your initiatives so they can move with clarity and pace.</p>
     <a href="contact.html" class="btn-outline fade-up delay-3">Engage TierAxis</a>
   </div>
 </section>
@@ -154,9 +168,9 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
   <div class="service-sidebar reveal">
     <div class="service-num-large">01</div>
     <p class="section-label">AWS Partner Engine</p>
-    <h2 class="service-sidebar-title">Navigating AWS<br>as a partner,<br>done well.</h2>
-    <p class="service-sidebar-body">The programs, funding paths, and co-sell options are powerful, but only if they are lined up with what your business is actually trying to do.</p>
-    <a href="contact.html" class="btn-primary">Leverage Your AWS Partnership</a>
+    <h2 class="service-sidebar-title">Your AWS motion<br>should be in<br>pipeline.</h2>
+    <p class="service-sidebar-body">Most AWS partnerships underperform not because the programs aren't there, but because co-sell motions, funding paths, and internal alignment are never properly connected. We fix that.</p>
+    <a href="contact.html" class="btn-primary">Put Your Partnership to Work</a>
   </div>
   <div class="service-content reveal" style="transition-delay:0.1s">
     <div class="subsection">
@@ -175,7 +189,24 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
         <li class="subsection-item">Aligning internal sales and delivery teams so the AWS motion is part of how you already sell, not a separate track.</li>
       </ul>
     </div>
-    <div class="service-callout">Whether you are starting from zero or trying to grow an established motion, we help the partnership show up in pipeline.</div>
+    <div class="stats-strip">
+      <div class="stat-block">
+        <div class="stat-num">51%</div>
+        <div class="stat-label">Higher average revenue growth for frequent co-sellers</div>
+        <div class="stat-source">2024 Canalys Study</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">65%</div>
+        <div class="stat-label">Of partners report higher close rates from co-sell motions</div>
+        <div class="stat-source">2024 Canalys Study</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">$7.13</div>
+        <div class="stat-label">In partner revenue for every $1 of AWS technology sold</div>
+        <div class="stat-source">Omdia / AWS PEM Study 2025</div>
+      </div>
+    </div>
+    <div class="service-callout">The data is clear active co-sell delivers. Most teams leave this on the table. We're here to make sure yours doesn't.</div>
   </div>
 </section>
 
@@ -183,9 +214,9 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
   <div class="service-sidebar reveal">
     <div class="service-num-large">02</div>
     <p class="section-label">Cloud Marketplace</p>
-    <h2 class="service-sidebar-title">Marketplace as<br>a real revenue<br>lane.</h2>
-    <p class="service-sidebar-body">Selling through AWS Marketplace lets you meet enterprise buyers where they already transact, with consolidated billing, streamlined procurement, and AWS spend commitments working for you.</p>
-    <a href="contact.html" class="btn-primary">Accelerate Your Pipeline</a>
+    <h2 class="service-sidebar-title">Marketplace<br>should be closing<br>deals for you.</h2>
+    <p class="service-sidebar-body">Enterprise buyers are already transacting in AWS Marketplace. If your listing isn't wired into co-sell, private offers, and your existing revenue motion you're leaving qualified pipeline on the table.</p>
+    <a href="contact.html" class="btn-primary">Turn Marketplace Into Revenue</a>
   </div>
   <div class="service-content reveal" style="transition-delay:0.1s">
     <div class="subsection">
@@ -196,7 +227,24 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
         <li class="subsection-item">Using private offers and co-sell so large deals can actually close through Marketplace.</li>
       </ul>
     </div>
-    <div class="service-callout">Most teams struggle to make Marketplace a durable part of how they sell, forecast, and fulfill, rather than a side experiment. We change that.</div>
+    <div class="stats-strip">
+      <div class="stat-block">
+        <div class="stat-num">234%</div>
+        <div class="stat-label">ROI for partners who build and scale a Marketplace practice</div>
+        <div class="stat-source">Forrester Consulting TEI Study</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">50%</div>
+        <div class="stat-label">Faster deal closure when transacting through AWS Marketplace</div>
+        <div class="stat-source">Forrester Consulting TEI Study</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">4–5×</div>
+        <div class="stat-label">Larger deal sizes via Channel Partner Private Offers</div>
+        <div class="stat-source">Forrester Consulting TEI Study</div>
+      </div>
+    </div>
+    <div class="service-callout">Most teams treat Marketplace as a side experiment. The ones closing seven-figure deals treat it as a core revenue lane. We get you there.</div>
   </div>
 </section>
 
@@ -205,7 +253,7 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
     <div class="service-num-large">03</div>
     <p class="section-label">Bench, On Purpose</p>
     <h2 class="service-sidebar-title">The right team<br>for the right<br>initiative.</h2>
-    <p class="service-sidebar-body">Putting the right team around the right project is often the hardest part, especially when you need deep domain experience and trusted execution, not just more hands.</p>
+    <p class="service-sidebar-body">Putting the right team around the right project is often the hardest part especially when you need deep domain experience and trusted execution, not just more hands.</p>
     <a href="contact.html" class="btn-outline">Let's Design Your Bench</a>
   </div>
   <div class="service-content reveal" style="transition-delay:0.1s">
