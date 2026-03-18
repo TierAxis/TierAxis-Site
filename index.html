@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TierAxis — The next stage of your growth, built through partners</title>
+<title>TierAxis: The next stage of your growth, built through partners</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -31,14 +31,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-sub{font-family:'Fraunces',serif;font-size:clamp(1rem,1.4vw,1.25rem);font-weight:300;line-height:1.7;color:var(--dark);opacity:0.75;max-width:38ch;margin-bottom:3rem;}
 .hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
 .btn-primary{background:var(--gold);color:var(--dark);padding:0.85rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--gold);border-radius:4px;transition:background 0.22s,color 0.22s,border-color 0.22s,transform 0.15s;display:inline-block;width:auto;}
-.btn-primary:hover,.btn-primary:active{background:var(--dark);border-color:var(--dark);color:var(--white);transform:translateY(-2px);}
+.btn-primary:hover{background:var(--dark);border-color:var(--dark);color:var(--white);transform:translateY(-2px);}
 .btn-ghost{font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--dark);text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;border:2px solid var(--gold);border-radius:4px;background:transparent;width:auto;}
-.btn-ghost:hover,.btn-ghost:active{background:var(--gold);color:var(--dark);}
+.btn-ghost:hover{background:var(--gold);color:var(--dark);}
 .btn-ghost::after{content:'→';}
-
-.hero-badge{margin-top:2.5rem;}
-.hero-badge img{width:160px;opacity:0.85;transition:opacity 0.2s;}
-.hero-badge img:hover{opacity:1;}
 
 .hero-right{background:var(--dark);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:4rem;}
 .hero-right::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(244,180,42,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.08) 1px,transparent 1px);background-size:48px 48px;}
@@ -67,6 +63,69 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .service-num{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:rgba(244,180,42,0.15);line-height:1;margin-bottom:1.5rem;}
 .service-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.04em;color:var(--white);margin-bottom:1rem;line-height:1.1;}
 .service-body{font-size:0.9rem;font-weight:300;line-height:1.75;color:rgba(255,254,254,0.55);}
+
+/* ── LYRAOS SECTION ── */
+.lyraos{background:var(--white);padding:7rem 8vw;position:relative;overflow:hidden;border-top:1px solid var(--light);}
+.lyraos-inner{position:relative;z-index:2;}
+.lyraos-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem;}
+.lyraos-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,4.5vw,4.5rem);line-height:0.95;letter-spacing:0.02em;color:var(--dark);margin-top:1rem;}
+.lyraos-heading em{font-style:normal;color:var(--gold);}
+.lyraos-intro{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:300;line-height:1.8;color:var(--dark);opacity:0.7;}
+.lyraos-body{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+
+/* floating panels */
+.lyraos-panels{display:flex;flex-direction:column;gap:1.2rem;}
+.lp{background:var(--dark);padding:1.8rem 2rem;position:relative;overflow:hidden;}
+.lp::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);}
+.lp-label{font-size:0.6rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;}
+.lp-badge{font-size:0.58rem;font-weight:500;letter-spacing:0.08em;background:rgba(244,180,42,0.15);color:var(--gold);padding:0.2rem 0.55rem;border:1px solid rgba(244,180,42,0.3);}
+
+/* panel 1: KPI strip */
+.lp-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);}
+.lp-kpi{background:var(--dark);padding:0.85rem 0.7rem;}
+.lp-kpi-lbl{font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:0.3rem;}
+.lp-kpi-val{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--gold);line-height:1;}
+
+/* panel 2: timeline */
+.lp-phases{display:flex;align-items:flex-start;margin-top:0.2rem;}
+.lp-ph{display:flex;flex-direction:column;align-items:center;gap:0.3rem;flex:1;}
+.lp-ph-dot{width:1.6rem;height:1.6rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.52rem;font-weight:500;flex-shrink:0;}
+.lp-ph-dot.done{background:var(--gold);color:var(--dark);}
+.lp-ph-dot.now{background:transparent;border:2px solid var(--gold);color:var(--gold);}
+.lp-ph-dot.soon{background:transparent;border:1.5px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.2);}
+.lp-ph-name{font-size:0.5rem;text-align:center;color:rgba(255,255,255,0.25);letter-spacing:0.03em;line-height:1.3;max-width:3.2rem;}
+.lp-ph-name.done{color:rgba(244,180,42,0.65);}
+.lp-ph-name.now{color:rgba(255,255,255,0.55);}
+.lp-line{flex:1;height:1px;background:rgba(255,255,255,0.1);margin-top:0.8rem;}
+.lp-line.done{background:rgba(244,180,42,0.45);}
+
+/* panel 3: tasks */
+.lp-tasks{display:flex;flex-direction:column;gap:0;}
+.lp-task{display:flex;align-items:center;gap:0.65rem;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.lp-task:last-child{border-bottom:none;}
+.lp-task-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.lp-task-dot.done{background:var(--gold);}
+.lp-task-dot.open{border:1.5px solid rgba(255,255,255,0.18);background:transparent;}
+.lp-task-txt{font-size:0.72rem;color:rgba(255,255,255,0.45);flex:1;line-height:1.3;}
+.lp-task-txt.done{color:rgba(255,255,255,0.2);text-decoration:line-through;}
+.lp-task-own{font-size:0.56rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);opacity:0.6;flex-shrink:0;}
+.lp-prog-row{display:flex;align-items:center;gap:0.8rem;margin-top:1rem;}
+.lp-prog-bar{flex:1;height:2px;background:rgba(255,255,255,0.08);}
+.lp-prog-fill{height:100%;width:6%;background:var(--gold);}
+.lp-prog-pct{font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--gold);}
+
+/* benefits */
+.lyraos-benefits{display:flex;flex-direction:column;padding-top:0.5rem;}
+.lyraos-benefit{padding:1.8rem 0;border-bottom:1px solid var(--light);display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:start;}
+.lyraos-benefit:first-child{border-top:1px solid var(--light);}
+.lyraos-benefit-icon{width:2.2rem;height:2.2rem;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.85rem;}
+.lyraos-benefit-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.04em;color:var(--dark);margin-bottom:0.4rem;}
+.lyraos-benefit-body{font-size:0.85rem;font-weight:300;line-height:1.75;color:var(--dark);opacity:0.6;}
+.lyraos-cta-row{margin-top:3rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.lyraos-btn{background:var(--gold);color:var(--dark);padding:0.85rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--gold);border-radius:4px;display:inline-block;transition:background 0.22s,color 0.22s,border-color 0.22s,transform 0.15s;}
+.lyraos-btn:hover{background:var(--dark);border-color:var(--dark);color:var(--white);transform:translateY(-2px);}
+.lyraos-note{font-size:0.78rem;color:var(--dark);opacity:0.35;letter-spacing:0.04em;}
+.lyraos-note em{color:var(--gold);opacity:1;font-style:italic;}
 
 .partners{padding:5rem 8vw;background:var(--light);border-top:1px solid rgba(75,75,67,0.12);border-bottom:1px solid rgba(75,75,67,0.12);}
 .partners-block-label{font-size:0.72rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--dark);opacity:0.45;text-align:center;margin-bottom:2.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;}
@@ -111,12 +170,16 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 .fade-up{opacity:0;animation:fadeUp 0.8s ease forwards;}
 .delay-1{animation-delay:0.1s;}.delay-2{animation-delay:0.25s;}.delay-3{animation-delay:0.4s;}.delay-4{animation-delay:0.55s;}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:none;}
 
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;}
   .hero-right{min-height:280px;}
   .where{grid-template-columns:1fr;gap:3rem;}
   .services-grid{grid-template-columns:1fr;}
+  .lyraos-header{grid-template-columns:1fr;gap:2rem;}
+  .lyraos-body{grid-template-columns:1fr;}
   .why{grid-template-columns:1fr;}
   .why-left{position:static;}
   .cta{grid-template-columns:1fr;}
@@ -141,13 +204,13 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
   <div class="hero-left">
     <p class="hero-eyebrow fade-up delay-1">Partner-Led Growth</p>
     <h1 class="hero-title fade-up delay-2">The next stage<br>of your growth,<br><em>built through<br>partners.</em></h1>
-    <p class="hero-sub fade-up delay-3">For teams ready to treat partners as part of the core business — turning ecosystems and shared benches into the backbone of how you grow.</p>
+    <p class="hero-sub fade-up delay-3">For teams ready to treat partners as part of the core business, turning ecosystems and shared benches into the backbone of how you grow.</p>
     <div class="hero-actions fade-up delay-4">
       <a href="contact.html" class="btn-primary">Engage TierAxis</a>
       <a href="services.html" class="btn-ghost">Explore Services</a>
     </div>
-    <div class="hero-badge fade-up delay-4">
-      <img src="images/aws-logo.png" alt="AWS Partner" />
+    <div style="margin-top:2rem;">
+      <img src="https://raw.githubusercontent.com/TierAxis/images/main/aws-logo.png" alt="AWS Partner" style="height:48px;opacity:0.85;">
     </div>
   </div>
   <div class="hero-right">
@@ -161,11 +224,11 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 </section>
 
 <section class="where">
-  <div>
+  <div class="reveal">
     <p class="section-label">Where We Fit</p>
     <h2 class="section-heading">Growth through<br>partners,<br>made real.</h2>
   </div>
-  <div class="where-body">
+  <div class="where-body reveal">
     Growth through partners usually means working with AWS and other cloud ecosystems, their marketplaces, and a mix of specialist firms. TierAxis helps you make real use of those programs: getting offers live, lining up co-sell motions and funding where it matters, and coordinating the external teams that sit around your core business.
     <br><br>
     <a href="services.html">Explore our services →</a>
@@ -173,33 +236,131 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 </section>
 
 <section class="services" id="services">
-  <div class="services-header">
+  <div class="services-header reveal">
     <div>
-      <p class="section-label">What We Do</p>
+      <p class="section-label" style="color:var(--gold);">What We Do</p>
       <h2 class="section-heading" style="color:var(--white)">Three pillars.<br>One engine.</h2>
     </div>
   </div>
   <div class="services-grid">
-    <div class="service-card">
+    <div class="service-card reveal">
       <div class="service-num">01</div>
       <div class="service-title">AWS Partner Engine</div>
       <p class="service-body">The AWS logo turns into a working growth engine when programs, funding paths, and motions with AWS reps and internal teams are lined up so the partnership shows up in pipeline.</p>
     </div>
-    <div class="service-card">
+    <div class="service-card reveal" style="transition-delay:0.12s">
       <div class="service-num">02</div>
       <div class="service-title">Marketplace to Revenue</div>
-      <p class="service-body">From "we should be in Marketplace" to offers that are live, discoverable, and moving — with private offers, channel paths, and reporting wired in so Marketplace behaves like a real revenue lane.</p>
+      <p class="service-body">From "we should be in Marketplace" to offers that are live, discoverable, and moving. Private offers, channel paths, and reporting wired in so Marketplace behaves like a real revenue lane.</p>
     </div>
-    <div class="service-card">
+    <div class="service-card reveal" style="transition-delay:0.24s">
       <div class="service-num">03</div>
       <div class="service-title">Bench, On Purpose</div>
-      <p class="service-body">A deliberate bench of delivery and GTM partners across cloud, product, and services work — ready for the initiatives that matter, so you are not scrambling for whoever is available when timing actually counts.</p>
+      <p class="service-body">A deliberate bench of delivery and GTM partners across cloud, product, and services work. Ready for the initiatives that matter, so the right team is in place when timing counts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── LYRAOS SECTION ── -->
+<section class="lyraos" id="lyraos">
+  <div class="lyraos-inner">
+    <div class="lyraos-header reveal">
+      <div>
+        <p class="section-label">Powered by LyraOS</p>
+        <h2 class="lyraos-heading">Every engagement<br>runs on a <em>live<br>command center.</em></h2>
+      </div>
+      <p class="lyraos-intro">LyraOS is the TierAxis engagement platform. The activation structure inside it is built from years of AWS partnership work. The sequencing, the workstreams, the milestones. Clients start from experience, not from scratch.</p>
+    </div>
+
+    <div class="lyraos-body">
+      <!-- Floating Panels -->
+      <div class="lyraos-panels reveal">
+
+        <!-- Panel 1: Engagement Snapshot -->
+        <div class="lp">
+          <div class="lp-label">Engagement Snapshot <span class="lp-badge">Active</span></div>
+          <div class="lp-kpis">
+            <div class="lp-kpi"><div class="lp-kpi-lbl">AWS Spend</div><div class="lp-kpi-val">$15K/mo</div></div>
+            <div class="lp-kpi"><div class="lp-kpi-lbl">FTR Target</div><div class="lp-kpi-val">Jun 30</div></div>
+            <div class="lp-kpi"><div class="lp-kpi-lbl">Days Left</div><div class="lp-kpi-val">108</div></div>
+          </div>
+          <div class="lp-prog-row">
+            <div style="font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25);">Overall Progress</div>
+            <div class="lp-prog-bar"><div class="lp-prog-fill"></div></div>
+            <div class="lp-prog-pct">6%</div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Milestone Timeline -->
+        <div class="lp">
+          <div class="lp-label">Milestone Timeline</div>
+          <div class="lp-phases">
+            <div class="lp-ph"><div class="lp-ph-dot done">✓</div><div class="lp-ph-name done">Onboarding</div></div>
+            <div class="lp-line done"></div>
+            <div class="lp-ph"><div class="lp-ph-dot done">✓</div><div class="lp-ph-name done">Playbook</div></div>
+            <div class="lp-line"></div>
+            <div class="lp-ph"><div class="lp-ph-dot now">30</div><div class="lp-ph-name now">Foundation &amp; FTR</div></div>
+            <div class="lp-line"></div>
+            <div class="lp-ph"><div class="lp-ph-dot soon">60</div><div class="lp-ph-name">WAFR &amp; ACE</div></div>
+            <div class="lp-line"></div>
+            <div class="lp-ph"><div class="lp-ph-dot soon">90</div><div class="lp-ph-name">Co-Sell Scale</div></div>
+          </div>
+        </div>
+
+        <!-- Panel 3: Task Ownership -->
+        <div class="lp">
+          <div class="lp-label">FTR Readiness <span class="lp-badge">1 of 13 done</span></div>
+          <div class="lp-tasks">
+            <div class="lp-task"><div class="lp-task-dot done"></div><div class="lp-task-txt done">AWS architecture inventory complete</div><div class="lp-task-own">TierAxis</div></div>
+            <div class="lp-task"><div class="lp-task-dot open"></div><div class="lp-task-txt">Confirm AWS Account ID and APN Partner ID</div><div class="lp-task-own">You</div></div>
+            <div class="lp-task"><div class="lp-task-dot open"></div><div class="lp-task-txt">Initiate Well-Architected Review</div><div class="lp-task-own">TierAxis</div></div>
+            <div class="lp-task"><div class="lp-task-dot open"></div><div class="lp-task-txt">Confirm encryption posture across services</div><div class="lp-task-own">You</div></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Benefits -->
+      <div class="lyraos-benefits reveal" style="transition-delay:0.12s">
+        <div class="lyraos-benefit">
+          <div class="lyraos-benefit-icon">◎</div>
+          <div>
+            <div class="lyraos-benefit-title">Full Visibility from Day One</div>
+            <p class="lyraos-benefit-body">From day one, your engagement runs on a proven activation structure. The plan, the workstreams, the milestones are already built. Your team steps into a track that has been refined through real AWS partnership work.</p>
+          </div>
+        </div>
+        <div class="lyraos-benefit">
+          <div class="lyraos-benefit-icon">◈</div>
+          <div>
+            <div class="lyraos-benefit-title">Clear Ownership on Every Task</div>
+            <p class="lyraos-benefit-body">Every task carries a clear owner. What TierAxis is driving and what requires your input is visible at all times. The structure keeps both sides accountable and the work moving forward together.</p>
+          </div>
+        </div>
+        <div class="lyraos-benefit">
+          <div class="lyraos-benefit-icon">▲</div>
+          <div>
+            <div class="lyraos-benefit-title">Built Around AWS Activation</div>
+            <p class="lyraos-benefit-body">FTR Readiness, Co-Sell, Seller Materials, AWS Marketplace. The workstreams are sequenced in the order that produces results. Years of AWS activation experience is embedded in the structure every client runs on.</p>
+          </div>
+        </div>
+        <div class="lyraos-benefit">
+          <div class="lyraos-benefit-icon">⚙</div>
+          <div>
+            <div class="lyraos-benefit-title">One System. Both Sides.</div>
+            <p class="lyraos-benefit-body">You and your TierAxis team work inside the same platform. Tasks checked off, contacts in one place, progress tracked in real time. Full visibility at every stage of the engagement.</p>
+          </div>
+        </div>
+        <div class="lyraos-cta-row">
+          <a href="contact.html" class="lyraos-btn">Engage TierAxis</a>
+          <p class="lyraos-note">Every TierAxis engagement is <em>powered by LyraOS.</em></p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="partners">
-  <div>
+  <div class="reveal">
     <div class="partners-block-label">Partners</div>
     <div class="partners-row">
       <div class="partner-wordmark">AWS</div>
@@ -209,7 +370,7 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
     </div>
   </div>
   <div class="partners-divider"></div>
-  <div>
+  <div class="reveal">
     <div class="partners-block-label">Where Our Team Has Delivered</div>
     <div class="partners-row delivered-row">
       <div class="partner-wordmark">CAPITAL<span style="color:var(--gold)">ONE</span></div>
@@ -220,28 +381,28 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 </section>
 
 <section class="why" id="why">
-  <div class="why-left">
+  <div class="why-left reveal">
     <p class="section-label">Why TierAxis</p>
     <h2 class="section-heading">We have been<br>inside the room.</h2>
     <blockquote class="why-quote">"We remember the late nights, the stalled approvals, and the moments when it finally clicked."</blockquote>
     <p class="why-body">TierAxis exists because we care about that kind of work and the people doing it. We stay with the partner-heavy initiatives that matter until they are moving the way they should.</p>
   </div>
   <ul class="why-points">
-    <li class="why-point">
+    <li class="why-point reveal">
       <div class="why-point-icon">⚙</div>
       <div>
         <div class="why-point-title">We've Lived the Coordination Problem</div>
         <p class="why-point-body">We have been the people inside the company trying to make AWS, Marketplace, sales, finance, and delivery move together without burning anyone out.</p>
       </div>
     </li>
-    <li class="why-point">
+    <li class="why-point reveal" style="transition-delay:0.1s">
       <div class="why-point-icon">◈</div>
       <div>
         <div class="why-point-title">We Stay Until It Moves</div>
-        <p class="why-point-body">TierAxis stays present with partner-heavy initiatives. Not just a plan — a partner who sees it through to the moment the work is actually moving.</p>
+        <p class="why-point-body">TierAxis stays present with partner-heavy initiatives, from the first conversation through to the moment the work is actually moving.</p>
       </div>
     </li>
-    <li class="why-point">
+    <li class="why-point reveal" style="transition-delay:0.2s">
       <div class="why-point-icon">▲</div>
       <div>
         <div class="why-point-title">Progress Stays Connected</div>
@@ -252,12 +413,12 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 </section>
 
 <section class="cta" id="cta">
-  <div style="position:relative;z-index:2">
+  <div style="position:relative;z-index:2" class="reveal">
     <p class="section-label cta-label">Let's Move Your Work Forward</p>
     <h2 class="cta-heading">You don't have<br>to do it <em>alone.</em></h2>
   </div>
-  <div class="cta-right">
-    <p class="cta-body">If you are carrying partner-heavy work that touches AWS, Marketplace, or your broader ecosystem — bring us one initiative that matters and we will walk it with you from where it is right now to what it needs to move cleanly.</p>
+  <div class="cta-right reveal" style="transition-delay:0.15s">
+    <p class="cta-body">If you are carrying partner-heavy work that touches AWS, Marketplace, or your broader ecosystem, bring us one initiative that matters and we will walk it with you from where it is right now to where it needs to go.</p>
     <a href="contact.html" class="btn-primary">Engage TierAxis</a>
     <a href="mailto:info@TierAxis.com" class="cta-email">info@TierAxis.com</a>
   </div>
@@ -276,5 +437,6 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
   <p class="footer-copy">© 2025 TierAxis • All rights reserved</p>
 </footer>
 
-</body>
-</html>
+<script>
+const reveals = document.querySelectorAll('.reveal');
+const o
