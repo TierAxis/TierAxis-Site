@@ -111,8 +111,6 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 .fade-up{opacity:0;animation:fadeUp 0.8s ease forwards;}
 .delay-1{animation-delay:0.1s;}.delay-2{animation-delay:0.25s;}.delay-3{animation-delay:0.4s;}.delay-4{animation-delay:0.55s;}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
-.reveal.visible{opacity:1;transform:none;}
 
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;}
@@ -149,7 +147,7 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
       <a href="services.html" class="btn-ghost">Explore Services</a>
     </div>
     <div class="hero-badge fade-up delay-4">
-      <img src="https://raw.githubusercontent.com/TierAxis/images/main/aws-logo.png" alt="AWS Partner" />
+      <img src="images/aws-logo.png" alt="AWS Partner" />
     </div>
   </div>
   <div class="hero-right">
@@ -163,11 +161,11 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 </section>
 
 <section class="where">
-  <div class="reveal">
+  <div>
     <p class="section-label">Where We Fit</p>
     <h2 class="section-heading">Growth through<br>partners,<br>made real.</h2>
   </div>
-  <div class="where-body reveal">
+  <div class="where-body">
     Growth through partners usually means working with AWS and other cloud ecosystems, their marketplaces, and a mix of specialist firms. TierAxis helps you make real use of those programs: getting offers live, lining up co-sell motions and funding where it matters, and coordinating the external teams that sit around your core business.
     <br><br>
     <a href="services.html">Explore our services →</a>
@@ -175,24 +173,24 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 </section>
 
 <section class="services" id="services">
-  <div class="services-header reveal">
+  <div class="services-header">
     <div>
       <p class="section-label">What We Do</p>
       <h2 class="section-heading" style="color:var(--white)">Three pillars.<br>One engine.</h2>
     </div>
   </div>
   <div class="services-grid">
-    <div class="service-card reveal">
+    <div class="service-card">
       <div class="service-num">01</div>
       <div class="service-title">AWS Partner Engine</div>
       <p class="service-body">The AWS logo turns into a working growth engine when programs, funding paths, and motions with AWS reps and internal teams are lined up so the partnership shows up in pipeline.</p>
     </div>
-    <div class="service-card reveal" style="transition-delay:0.12s">
+    <div class="service-card">
       <div class="service-num">02</div>
       <div class="service-title">Marketplace to Revenue</div>
       <p class="service-body">From "we should be in Marketplace" to offers that are live, discoverable, and moving — with private offers, channel paths, and reporting wired in so Marketplace behaves like a real revenue lane.</p>
     </div>
-    <div class="service-card reveal" style="transition-delay:0.24s">
+    <div class="service-card">
       <div class="service-num">03</div>
       <div class="service-title">Bench, On Purpose</div>
       <p class="service-body">A deliberate bench of delivery and GTM partners across cloud, product, and services work — ready for the initiatives that matter, so you are not scrambling for whoever is available when timing actually counts.</p>
@@ -201,18 +199,17 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 </section>
 
 <section class="partners">
-  <div class="reveal">
+  <div>
     <div class="partners-block-label">Partners</div>
     <div class="partners-row">
       <div class="partner-wordmark">AWS</div>
       <div class="partner-wordmark">INGRAM<br><span style="font-size:0.6em;letter-spacing:0.2em;">MICRO</span></div>
       <div class="partner-wordmark">6PILLARS<span style="color:var(--gold)">.AI</span></div>
-      <div class="partner-wordmark">DRATA</div>
       <div class="partner-wordmark">VANTA</div>
     </div>
   </div>
   <div class="partners-divider"></div>
-  <div class="reveal">
+  <div>
     <div class="partners-block-label">Where Our Team Has Delivered</div>
     <div class="partners-row delivered-row">
       <div class="partner-wordmark">CAPITAL<span style="color:var(--gold)">ONE</span></div>
@@ -223,28 +220,28 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 </section>
 
 <section class="why" id="why">
-  <div class="why-left reveal">
+  <div class="why-left">
     <p class="section-label">Why TierAxis</p>
     <h2 class="section-heading">We have been<br>inside the room.</h2>
     <blockquote class="why-quote">"We remember the late nights, the stalled approvals, and the moments when it finally clicked."</blockquote>
     <p class="why-body">TierAxis exists because we care about that kind of work and the people doing it. We stay with the partner-heavy initiatives that matter until they are moving the way they should.</p>
   </div>
   <ul class="why-points">
-    <li class="why-point reveal">
+    <li class="why-point">
       <div class="why-point-icon">⚙</div>
       <div>
         <div class="why-point-title">We've Lived the Coordination Problem</div>
         <p class="why-point-body">We have been the people inside the company trying to make AWS, Marketplace, sales, finance, and delivery move together without burning anyone out.</p>
       </div>
     </li>
-    <li class="why-point reveal" style="transition-delay:0.1s">
+    <li class="why-point">
       <div class="why-point-icon">◈</div>
       <div>
         <div class="why-point-title">We Stay Until It Moves</div>
         <p class="why-point-body">TierAxis stays present with partner-heavy initiatives. Not just a plan — a partner who sees it through to the moment the work is actually moving.</p>
       </div>
     </li>
-    <li class="why-point reveal" style="transition-delay:0.2s">
+    <li class="why-point">
       <div class="why-point-icon">▲</div>
       <div>
         <div class="why-point-title">Progress Stays Connected</div>
@@ -255,14 +252,14 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 </section>
 
 <section class="cta" id="cta">
-  <div style="position:relative;z-index:2" class="reveal">
+  <div style="position:relative;z-index:2">
     <p class="section-label cta-label">Let's Move Your Work Forward</p>
     <h2 class="cta-heading">You don't have<br>to do it <em>alone.</em></h2>
   </div>
-  <div class="cta-right reveal" style="transition-delay:0.15s">
+  <div class="cta-right">
     <p class="cta-body">If you are carrying partner-heavy work that touches AWS, Marketplace, or your broader ecosystem — bring us one initiative that matters and we will walk it with you from where it is right now to what it needs to move cleanly.</p>
     <a href="contact.html" class="btn-primary">Engage TierAxis</a>
-    <a href="/cdn-cgi/l/email-protection#5d34333b321d0934382f1c25342e733e3230" class="cta-email"><span class="__cf_email__" data-cfemail="274e49414867734e4255665f4e540944484a">[email&#160;protected]</span></a>
+    <a href="mailto:info@TierAxis.com" class="cta-email">info@TierAxis.com</a>
   </div>
 </section>
 
@@ -279,6 +276,5 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
   <p class="footer-copy">© 2025 TierAxis • All rights reserved</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-const reveals = document.querySelectorAll('.reveal');
-const o
+</body>
+</html>
