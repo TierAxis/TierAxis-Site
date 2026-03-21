@@ -38,9 +38,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .btn-ghost::after{content:'→';}
 
 .hero-right{background:var(--dark);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:4rem;}
-.hero-right::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(244,180,42,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.08) 1px,transparent 1px);background-size:48px 48px;}
-.hero-right::after{content:'';position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(244,180,42,0.18) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);}
-.hero-stat-grid{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:rgba(244,180,42,0.25);border:1.5px solid rgba(244,180,42,0.25);}
+.hero-right::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(244,180,42,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.08) 1px,transparent 1px);background-size:48px 48px;z-index:2;}
+.hero-right::after{content:'';position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(244,180,42,0.18) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;}
+.hero-stat-grid{position:relative;z-index:3;display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:rgba(244,180,42,0.25);border:1.5px solid rgba(244,180,42,0.25);}
 .hero-stat{background:var(--dark);padding:2.5rem 2rem;display:flex;flex-direction:column;gap:0.5rem;}
 .hero-stat-num{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--gold);line-height:1;}
 .hero-stat-label{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);opacity:0.5;}
@@ -215,11 +215,12 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
     </div>
   </div>
   <div class="hero-right">
+    <img src="https://raw.githubusercontent.com/TierAxis/images/main/IMG_2233%20(1).jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.10;z-index:1;">
     <div class="hero-stat-grid">
-      <div class="hero-stat"><div class="hero-stat-num">AWS</div><div class="hero-stat-label">Partner Engine</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">MKT</div><div class="hero-stat-label">To Revenue</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">GTM</div><div class="hero-stat-label">Co-Sell Motions</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">ECO</div><div class="hero-stat-label">Bench On Purpose</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">AWS</div><div class="hero-stat-label">Partnership Active</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">MKT</div><div class="hero-stat-label">Revenue Moving</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">ACE</div><div class="hero-stat-label">Pipeline Live</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">MDF</div><div class="hero-stat-label">Unlocked</div></div>
     </div>
   </div>
 </section>
@@ -248,17 +249,17 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
     <div class="service-card reveal">
       <div class="service-num">01</div>
       <div class="service-title">AWS Partner Engine</div>
-      <p class="service-body">Co-sell · ISV Accelerate · MAP · MDF · ACE Pipeline · Field Alignment<br><br>Most AWS partnerships stall in the gap between enrollment and execution. TierAxis works through that gap directly, mapping your co-sell motion to how AWS field sellers actually engage, building the ACE pipeline discipline that raises your co-sell score, and structuring funding requests at the moment they're winnable. We know what the Foundational Technical Review requires before ISV Accelerate funding unlocks. We know which asks move and which ones disappear into a queue.<br><br>When we're done, your AWS sellers know your solution, your ACE pipeline reflects your real deals, and your funding requests are structured to get approved.</p>
+      <p class="service-body">Co-sell · ISV Accelerate · MAP · MDF · ACE Pipeline · Field Alignment<br><br>Most AWS partnerships stall in the gap between enrollment and execution. TierAxis works through that gap directly, mapping your co-sell motion to how AWS field sellers actually engage, building the ACE pipeline discipline that raises your co-sell score, and structuring funding requests at the moment they're winnable. We know what the Foundational Technical Review requires before ISV Accelerate funding unlocks. We know which asks move and which ones disappear into a queue.</p>
     </div>
     <div class="service-card reveal" style="transition-delay:0.12s">
       <div class="service-num">02</div>
       <div class="service-title">Cloud Marketplace</div>
-      <p class="service-body">Listing · Private Offers · Co-Sell Linkage · Revenue Lane · Procurement Alignment<br><br>Getting listed is the beginning. The work that generates revenue: private offer strategy, co-sell linkage in ACE, procurement cycle alignment with your buyers' finance teams, entitlement and metering that holds up under a real enterprise deal. That's the part that requires someone who's been inside Marketplace operations. TierAxis builds a working revenue lane around your existing listing.<br><br>A Marketplace presence that closes deals, not a listing that signals you showed up.</p>
+      <p class="service-body">Listing · Private Offers · Co-Sell Linkage · Revenue Lane · Procurement Alignment<br><br>Getting listed is the beginning. The work that generates revenue: private offer strategy, co-sell linkage in ACE, procurement cycle alignment with your buyers' finance teams, entitlement and metering that holds up under a real enterprise deal. That's the part that requires someone who's been inside Marketplace operations. TierAxis builds a working revenue lane around your existing listing.</p>
     </div>
     <div class="service-card reveal" style="transition-delay:0.24s">
       <div class="service-num">03</div>
       <div class="service-title">Bench, On Purpose</div>
-      <p class="service-body">Delivery · Domain Experts · Staff Augmentation · Program Execution<br><br>Most bench programs are a roster. You call, you get names, you hope the fit is close enough. TierAxis works differently. We understand the initiative first: the AWS workloads, the technical requirements, the regulatory context, the delivery timeline, then assemble from a curated network of operators who have done this specific type of work before.<br><br>A delivery team that knows the terrain, ready when the initiative is, not after three rounds of onboarding.</p>
+      <p class="service-body">Delivery · Domain Experts · Staff Augmentation · Program Execution<br><br>Most bench programs are a roster. You call, you get names, you hope the fit is close enough. TierAxis works differently. We understand the initiative first: the AWS workloads, the technical requirements, the regulatory context, the delivery timeline, then assemble from a curated network of operators who have done this specific type of work before.</p>
     </div>
   </div>
 </section>
@@ -420,10 +421,10 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
     <h2 class="cta-heading">Find out where<br>your AWS partnership<br><em>actually stands.</em></h2>
   </div>
   <div class="cta-right reveal" style="transition-delay:0.15s">
-    <p class="cta-body">Before any engagement, we run a direct assessment of your current AWS program status: ISV Accelerate eligibility, ACE pipeline health, Marketplace listing and offer posture, and funding qualification. No sales deck. No discovery theater. You leave with a clear picture of what's working, what's not, and what to do next.</p>
+    <p class="cta-body">Before any engagement, we run a direct assessment of your current AWS program status: ISV Accelerate eligibility, ACE pipeline health, Marketplace listing and offer posture, and funding qualification. You leave with a clear picture of what's working, what's not, and what to do next.</p>
     <a href="contact.html" class="btn-primary">Book a Partner Readiness Assessment</a>
     <a href="mailto:info@TierAxis.com" class="cta-email">info@TierAxis.com</a>
-    <p style="margin-top:1.5rem;font-size:0.78rem;color:rgba(255,254,254,0.3);letter-spacing:0.04em;">45 minutes. No cost. We come prepared.<br>We only take on work where we can move the needle. If the assessment shows you don't need us, we'll tell you that too.</p>
+    <p style="margin-top:1.5rem;font-size:0.78rem;color:rgba(255,254,254,0.3);letter-spacing:0.04em;">45 minutes. No cost. We come prepared. Every engagement starts with honesty about what will actually move.</p>
   </div>
 </section>
 
@@ -436,5 +437,4 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
     <li><a href="contact.html">Contact</a></li>
     <li><a href="#">Privacy Policy</a></li>
     <li><a href="#">Terms</a></li>
-  </ul>
-  <p class="footer-copy">© 2025 TierAxis · AWS Partner Activation · We stay with the work until it's moving.</p>
+</
