@@ -142,6 +142,7 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 </nav>
 
 <section class="hero">
+  <img src="https://raw.githubusercontent.com/TierAxis/images/main/TierAxis_OK.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.05;z-index:1;">
   <div class="hero-inner">
     <p class="hero-eyebrow fade-up delay-1">Service Pillars</p>
     <h1 class="hero-title fade-up delay-2">Enrolled. Listed. Stalled.<br><em>Let's fix that.</em></h1>
@@ -278,8 +279,8 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
   <div class="reveal" style="transition-delay:0.15s;position:relative;z-index:2;">
     <p class="lets-talk-body">Before any engagement, we run a direct assessment of your current AWS program status: ISV Accelerate eligibility, ACE pipeline health, Marketplace listing and offer posture, and funding qualification. You leave with a clear picture of what's working, what's not, and what to do next. Every engagement starts with honesty about what will actually move.</p>
     <a href="contact.html" class="btn-outline">Book a Partner Readiness Assessment</a>
-    <p style="margin-top:1rem;font-size:0.78rem;opacity:0.4;letter-spacing:0.04em;">45 minutes. No cost. We come prepared.</p>
-    <a href="/cdn-cgi/l/email-protection#2a43444c456a7e434f586b52435904494547" class="lets-talk-email"><span class="__cf_email__" data-cfemail="573e39313817033e3225162f3e247934383a">[email&#160;protected]</span></a>
+    <p style="margin-top:1rem;font-size:0.78rem;color:rgba(255,254,254,0.35);letter-spacing:0.04em;">45 minutes. No cost. We come prepared.</p>
+    <a href="mailto:info@TierAxis.com" class="lets-talk-email">info@TierAxis.com</a>
   </div>
 </section>
 
@@ -293,10 +294,10 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
     <li><a href="privacy.html">Privacy Policy</a></li>
     <li><a href="terms.html">Terms</a></li>
   </ul>
-  <p class="footer-copy">© 2026 TierAxis • All rights reserved</p>
+  <p class="footer-copy">&copy; 2026 TierAxis &middot; AWS Partner Activation &middot; We stay with the work until it's moving.</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const reveals = document.querySelectorAll('.reveal');
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
@@ -310,3 +311,12 @@ const sectionObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if(e.isIntersecting){
       navItems.forEach(n => n.classList.remove('active'));
+      const match = document.querySelector('.pillar-nav-item[href="#'+e.target.id+'"]');
+      if(match) match.classList.add('active');
+    }
+  });
+},{threshold:0.4});
+sections.forEach(s => sectionObs.observe(s));
+</script>
+</body>
+</html>
