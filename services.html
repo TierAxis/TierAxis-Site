@@ -109,6 +109,15 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 .footer-links a:hover{color:var(--gold);}
 .footer-copy{font-size:0.72rem;color:rgba(255,254,254,0.2);letter-spacing:0.05em;}
 
+/* ── PLAYBOOK CALLOUT ── */
+.playbook-callout{display:grid;grid-template-columns:auto 1fr auto;gap:1.5rem;align-items:center;background:rgba(244,180,42,0.08);border:1px solid rgba(244,180,42,0.25);border-left:3px solid var(--gold);padding:1.8rem 2rem;margin-top:3rem;}
+.playbook-callout-icon{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--gold);line-height:1;width:2.5rem;text-align:center;}
+.playbook-callout-title{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:0.04em;color:var(--dark);margin-bottom:0.3rem;}
+.playbook-callout-body{font-size:0.85rem;font-weight:300;line-height:1.65;color:var(--dark);opacity:0.6;}
+.playbook-callout-btn{background:var(--gold);color:var(--dark);padding:0.75rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--gold);border-radius:4px;white-space:nowrap;transition:background 0.22s,color 0.22s,border-color 0.22s,transform 0.15s;display:inline-block;}
+.playbook-callout-btn:hover{background:var(--dark);border-color:var(--dark);color:var(--white);transform:translateY(-2px);}
+@media(max-width:900px){.playbook-callout{grid-template-columns:1fr;}.playbook-callout-icon{display:none;}}
+
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
 .fade-up{opacity:0;animation:fadeUp 0.8s ease forwards;}
 .delay-1{animation-delay:0.1s;}.delay-2{animation-delay:0.25s;}.delay-3{animation-delay:0.4s;}
@@ -183,6 +192,15 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
         <li class="subsection-item">Bringing your internal sales team into the AWS motion so it reinforces how you already sell rather than running as a separate track.</li>
       </ul>
     </div>
+    <div class="playbook-callout">
+      <div class="playbook-callout-icon">↓</div>
+      <div class="playbook-callout-content">
+        <div class="playbook-callout-title">The AWS Partner Revenue Playbook</div>
+        <p class="playbook-callout-body">The framework behind alignment, enablement, and activation — and the mistakes that keep co-sell pipelines empty. Free download.</p>
+      </div>
+      <a href="https://raw.githubusercontent.com/TierAxis/Files/main/TierAxis_AWS_Partner_Revenue_Playbook.pdf" class="playbook-callout-btn" download>Download the Playbook</a>
+    </div>
+
     <div class="stats-strip">
       <div class="stat-block">
         <div class="stat-num">51%</div>
@@ -277,10 +295,10 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
     <h2 class="lets-talk-heading">Most initiatives touch<br>more than <em>one pillar.</em><br>Bring us one that matters.</h2>
   </div>
   <div class="reveal" style="transition-delay:0.15s;position:relative;z-index:2;">
-    <p class="lets-talk-body">Before any engagement, we run a direct assessment of your current AWS program status: ISV Accelerate eligibility, ACE pipeline health, Marketplace listing and offer posture, and funding qualification. You leave with a clear picture of what's working, what's not, and what to do next. Every engagement starts with honesty about what will actually move.</p>
+    <p class="lets-talk-body">Before any engagement, we run a direct assessment of your current AWS partnership status.</p>
     <a href="contact.html" class="btn-outline">Book a Partner Readiness Assessment</a>
     <p style="margin-top:1rem;font-size:0.78rem;color:rgba(255,254,254,0.35);letter-spacing:0.04em;">45 minutes. No cost. We come prepared.</p>
-    <a href="mailto:info@TierAxis.com" class="lets-talk-email">info@TierAxis.com</a>
+    <a href="/cdn-cgi/l/email-protection#a5cccbc3cae5f1ccc0d7e4ddccd68bc6cac8" class="lets-talk-email"><span class="__cf_email__" data-cfemail="70191e161f3024191502310819035e131f1d">[email&#160;protected]</span></a>
   </div>
 </section>
 
@@ -297,7 +315,7 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
   <p class="footer-copy">&copy; 2026 TierAxis &middot; AWS Partner Activation &middot; We stay with the work until it's moving.</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const reveals = document.querySelectorAll('.reveal');
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
@@ -311,11 +329,12 @@ const sectionObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if(e.isIntersecting){
       navItems.forEach(n => n.classList.remove('active'));
-      const match = document.querySelector('.pillar-nav-item[href="#'+e.target.id+'"]');
+       const id = e.target.id;
+      const match = document.querySelector(`.pillar-nav-item[href="#${id}"]`);
       if(match) match.classList.add('active');
     }
   });
-},{threshold:0.4});
+},{threshold:0.2});
 sections.forEach(s => sectionObs.observe(s));
 </script>
 </body>
