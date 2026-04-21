@@ -158,16 +158,18 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 
   <div class="contact-right reveal" style="transition-delay:0.1s">
     <p class="form-intro">Fill out the form below and someone from the TierAxis team will be in touch within one business day. The more context you can share, the better prepared we will be for the conversation.</p>
-    <form class="form" id="contactForm" onsubmit="handleSubmit(event)">
+    <form class="form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="form-name" value="contact">
+      <p style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
       <div class="form-row">
-        <div class="form-group"><label class="form-label" for="firstName">First Name</label><input class="form-input" type="text" id="firstName" placeholder="Jane" required></div>
-        <div class="form-group"><label class="form-label" for="lastName">Last Name</label><input class="form-input" type="text" id="lastName" placeholder="Smith" required></div>
+        <div class="form-group"><label class="form-label" for="firstName">First Name</label><input class="form-input" type="text" id="firstName" name="firstName" placeholder="Jane" required></div>
+        <div class="form-group"><label class="form-label" for="lastName">Last Name</label><input class="form-input" type="text" id="lastName" name="lastName" placeholder="Smith" required></div>
       </div>
-      <div class="form-group"><label class="form-label" for="email">Work Email</label><input class="form-input" type="email" id="email" placeholder="jane@yourcompany.com" required></div>
-      <div class="form-group"><label class="form-label" for="company">Company</label><input class="form-input" type="text" id="company" placeholder="Your company name"></div>
+      <div class="form-group"><label class="form-label" for="email">Work Email</label><input class="form-input" type="email" id="email" name="email" placeholder="jane@yourcompany.com" required></div>
+      <div class="form-group"><label class="form-label" for="company">Company</label><input class="form-input" type="text" id="company" name="company" placeholder="Your company name"></div>
       <div class="form-group">
         <label class="form-label" for="pillar">Which pillar are you most interested in?</label>
-        <select class="form-select" id="pillar">
+        <select class="form-select" id="pillar" name="pillar">
           <option value="" disabled selected>Select a service area</option>
           <option value="aws">AWS Partner Engine</option>
           <option value="marketplace">Cloud Marketplace</option>
@@ -176,14 +178,14 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
           <option value="unsure">Not sure yet</option>
         </select>
       </div>
-      <div class="form-group"><label class="form-label" for="initiative">Tell us about the initiative</label><textarea class="form-textarea" id="initiative" placeholder="Describe what you are working on, where things stand, and what you are trying to move. The more context the better." required></textarea></div>
+      <div class="form-group"><label class="form-label" for="initiative">Tell us about the initiative</label><textarea class="form-textarea" id="initiative" name="initiative" placeholder="Describe what you are working on, where things stand, and what you are trying to move. The more context the better." required></textarea></div>
       <div class="form-group">
         <label class="form-label">Where are you in your journey?</label>
         <div class="form-check-group">
-          <label class="form-check"><input type="checkbox" value="new-partner"><span class="form-check-label">New to AWS partnerships or Marketplace</span></label>
-          <label class="form-check"><input type="checkbox" value="established"><span class="form-check-label">Established partner looking to scale</span></label>
-          <label class="form-check"><input type="checkbox" value="stalled"><span class="form-check-label">Have an initiative that has stalled</span></label>
-          <label class="form-check"><input type="checkbox" value="team"><span class="form-check-label">Need the right delivery team for a project</span></label>
+          <label class="form-check"><input type="checkbox" name="journey" value="new-partner"><span class="form-check-label">New to AWS partnerships or Marketplace</span></label>
+          <label class="form-check"><input type="checkbox" name="journey" value="established"><span class="form-check-label">Established partner looking to scale</span></label>
+          <label class="form-check"><input type="checkbox" name="journey" value="stalled"><span class="form-check-label">Have an initiative that has stalled</span></label>
+          <label class="form-check"><input type="checkbox" name="journey" value="team"><span class="form-check-label">Need the right delivery team for a project</span></label>
         </div>
       </div>
       <div>
@@ -237,9 +239,22 @@ setTimeout(() => { reveals.forEach(r => r.classList.add('visible')); }, 500);
 
 function handleSubmit(e) {
   e.preventDefault();
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('formSuccess').classList.add('visible');
-  window.scrollTo({top:document.querySelector('.contact-right').offsetTop - 100,behavior:'smooth'});
+  const form = document.getElementById('contactForm');
+  const data = new FormData(form);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(() => {
+    form.style.display = 'none';
+    document.getElementById('formSuccess').classList.add('visible');
+    window.scrollTo({top:document.querySelector('.contact-right').offsetTop - 100,behavior:'smooth'});
+  })
+  .catch((error) => {
+    alert('Something went wrong. Please email us directly at info@TierAxis.com');
+    console.error('Form error:', error);
+  });
 }
 </script>
 </body>
