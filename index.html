@@ -456,12 +456,12 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
       </div>
       <button type="submit" class="playbook-form-submit">Send it</button>
     </form>
-    <p class="playbook-form-fine">We'll send you the playbook and an occasional note when we publish something worth your time. No spam.</p>
+    <p class="playbook-form-fine">Instant download. We'll add you to the list for occasional notes when we publish something worth your time. No spam.</p>
 
     <div class="playbook-form-success" id="playbook-form-success">
       <div class="playbook-form-success-check">✓</div>
-      <div class="playbook-form-success-title">On its way.</div>
-      <p class="playbook-form-success-body">Check your inbox. If you'd like to move faster, reply to that email and we'll set up a conversation.</p>
+      <div class="playbook-form-success-title">Your download is starting.</div>
+      <p class="playbook-form-success-body">If it doesn't start automatically, <a href="https://raw.githubusercontent.com/TierAxis/Files/main/TierAxis_AWS_Partner_Revenue_Playbook.pdf" style="color:var(--gold-dark);font-weight:500;" download>click here</a>. If you'd like to talk through it, reach out at info@TierAxis.com.</p>
     </div>
   </div>
 </section>
@@ -507,6 +507,7 @@ function handlePlaybookSubmit(event) {
   event.preventDefault();
   const form = document.getElementById('playbook-form');
   const data = new FormData(form);
+  const playbookUrl = 'https://raw.githubusercontent.com/TierAxis/Files/main/TierAxis_AWS_Partner_Revenue_Playbook.pdf';
 
   // Submit to Netlify Forms
   fetch('/', {
@@ -515,6 +516,16 @@ function handlePlaybookSubmit(event) {
     body: new URLSearchParams(data).toString()
   })
   .then(() => {
+    // Trigger the download
+    const a = document.createElement('a');
+    a.href = playbookUrl;
+    a.download = 'TierAxis_AWS_Partner_Acceleration_Playbook.pdf';
+    a.target = '_blank';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    // Show success state
     form.style.display = 'none';
     const fine = document.querySelector('.playbook-form-fine');
     if (fine) fine.style.display = 'none';
