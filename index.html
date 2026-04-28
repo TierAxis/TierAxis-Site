@@ -9,11 +9,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root { --white:#fffefe; --dark:#4b4b43; --gold:#f4b42a; --gold-dark:#a06f00; --light:#e5e5e5; }
+:root { --white:#fffefe; --dark:#4b4b43; --darker:#3a3a33; --gold:#f4b42a; --gold-dark:#a06f00; --light:#e5e5e5; --light-2:#f5f4ee; }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
 body{background:var(--white);color:var(--dark);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
 
+/* NAV : unchanged */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 5vw;background:rgba(255,254,254,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--light);}
 .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.08em;color:var(--dark);text-decoration:none;}
 .nav-logo span{color:var(--gold);}
@@ -23,51 +24,118 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-cta{background:var(--gold);color:var(--dark)!important;opacity:1!important;padding:0.55rem 1.3rem;border-radius:2px;font-weight:500!important;transition:background 0.2s,color 0.2s,transform 0.15s!important;}
 .nav-cta:hover{background:var(--dark)!important;color:var(--white)!important;transform:translateY(-1px);}
 
+/* Shared */
+.section-label{font-size:0.72rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.6rem;}
+.section-label::before{content:'';display:block;width:1.5rem;height:1px;background:var(--gold-dark);}
+.section-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4vw,4rem);line-height:1;letter-spacing:0.02em;color:var(--dark);}
+.btn-primary{background:var(--gold);color:var(--dark);padding:0.85rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--gold);border-radius:4px;transition:background 0.22s,color 0.22s,border-color 0.22s,transform 0.15s;display:inline-block;}
+.btn-primary:hover{background:var(--dark);border-color:var(--dark);color:var(--white);transform:translateY(-2px);}
+.btn-ghost{font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--dark);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;border:2px solid var(--gold);border-radius:4px;background:transparent;transition:all 0.2s;}
+.btn-ghost:hover{background:var(--gold);}
+.btn-ghost::after{content:'→';}
+
+/* ─────────────────────────────────────────────────────────────────
+   HERO : replace the AWS/MKT/DEAL/FUND grid with a structural
+   diagram of "the partnership engine" + AWS partner credentials.
+   This is the change with the highest visual leverage.
+   ───────────────────────────────────────────────────────────────── */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:80px;position:relative;overflow:hidden;}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:6rem 5vw 6rem 8vw;position:relative;z-index:2;}
 .hero-eyebrow{font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
 .hero-eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--gold-dark);}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,7vw,7.5rem);line-height:0.92;letter-spacing:0.01em;color:var(--dark);margin-bottom:2rem;}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4.5rem,8vw,8.5rem);line-height:0.9;letter-spacing:0.005em;color:var(--dark);margin-bottom:2rem;}
 .hero-title em{font-style:normal;color:var(--gold);display:block;}
-.hero-sub{font-family:'Fraunces',serif;font-size:clamp(1rem,1.4vw,1.25rem);font-weight:300;line-height:1.7;color:var(--dark);opacity:0.75;max-width:38ch;margin-bottom:3rem;}
-.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;}
-.btn-primary{background:var(--gold);color:var(--dark);padding:0.85rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--gold);border-radius:4px;transition:background 0.22s,color 0.22s,border-color 0.22s,transform 0.15s;display:inline-block;width:auto;}
-.btn-primary:hover{background:var(--dark);border-color:var(--dark);color:var(--white);transform:translateY(-2px);}
-.btn-ghost{font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--dark);text-decoration:none;transition:all 0.2s;display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;border:2px solid var(--gold);border-radius:4px;background:transparent;width:auto;}
-.btn-ghost:hover{background:var(--gold);color:var(--dark);}
-.btn-ghost::after{content:'→';}
+.hero-sub{font-family:'Fraunces',serif;font-size:clamp(1rem,1.4vw,1.25rem);font-weight:300;line-height:1.7;color:var(--dark);opacity:0.78;max-width:38ch;margin-bottom:2.5rem;}
+.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:3rem;}
 
-.hero-right{background:var(--dark);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:4rem;}
-.hero-right::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(244,180,42,0.08) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.08) 1px,transparent 1px);background-size:48px 48px;z-index:2;}
-.hero-right::after{content:'';position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(244,180,42,0.18) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;}
-.hero-stat-grid{position:relative;z-index:3;display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:rgba(244,180,42,0.25);border:1.5px solid rgba(244,180,42,0.25);}
-.hero-stat{background:var(--dark);padding:2.5rem 2rem;display:flex;flex-direction:column;gap:0.5rem;}
-.hero-stat-num{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--gold);line-height:1;}
-.hero-stat-label{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);opacity:0.5;}
+/* trust strip below buttons */
+.hero-trust{display:flex;align-items:center;gap:2rem;padding-top:1.75rem;border-top:1px solid var(--light);}
+.hero-trust-label{font-size:0.62rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--dark);opacity:0.45;}
+.hero-trust-logos{display:flex;align-items:center;gap:1.5rem;}
+.hero-trust-logos img{height:48px;opacity:0.85;}
 
-.section-label{font-size:0.72rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:1.2rem;display:flex;align-items:center;gap:0.6rem;}
-.section-label::before{content:'';display:block;width:1.5rem;height:1px;background:var(--gold-dark);}
-.services .section-label,.cta .section-label{color:var(--gold);}
-.services .section-label::before,.cta .section-label::before{background:var(--gold);}
-.section-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4vw,4rem);line-height:1;letter-spacing:0.02em;color:var(--dark);}
+/* RIGHT side : engine diagram */
+.hero-right{background:var(--darker);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:3rem;}
+.hero-right::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(244,180,42,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.06) 1px,transparent 1px);background-size:48px 48px;}
+.hero-right::after{content:'';position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(244,180,42,0.14) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);}
 
-.where{padding:7rem 8vw;display:grid;grid-template-columns:1fr 1.6fr;gap:6rem;align-items:center;border-bottom:1px solid var(--light);}
-.where-body{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:300;line-height:1.8;color:var(--dark);opacity:0.8;}
-.where-body a{color:var(--gold-dark);text-decoration:none;border-bottom:1px solid var(--gold-dark);padding-bottom:1px;font-style:italic;}
+.engine{position:relative;z-index:2;width:100%;max-width:520px;}
+.engine-label{font-size:0.6rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.6rem;}
+.engine-label::before{content:'';width:1.5rem;height:1px;background:var(--gold);opacity:0.6;}
+.engine-title{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:0.04em;color:var(--white);line-height:1;margin-bottom:2rem;}
+.engine-title em{font-style:normal;color:var(--gold);}
 
-.services{background:var(--dark);padding:7rem 8vw;position:relative;overflow:hidden;}
+.engine-flow{display:flex;flex-direction:column;gap:0;}
+.engine-node{position:relative;background:rgba(244,180,42,0.04);border:1px solid rgba(244,180,42,0.25);padding:1.1rem 1.3rem;display:flex;align-items:center;justify-content:space-between;transition:background 0.3s,border-color 0.3s,box-shadow 0.3s;}
+.engine-node:hover{background:rgba(244,180,42,0.08);border-color:rgba(244,180,42,0.45);}
+.engine-node-tag{font-family:'Bebas Neue',sans-serif;font-size:0.7rem;letter-spacing:0.18em;color:var(--gold);opacity:0.6;}
+.engine-node-name{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:0.04em;color:var(--white);flex:1;margin:0 1rem;transition:color 0.3s;}
+.engine-node-meta{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.45);font-weight:500;}
+
+/* Connector line between nodes : the arrows */
+.engine-arrow{position:relative;height:1.3rem;display:flex;justify-content:center;align-items:center;margin:0 auto;width:1px;background:rgba(244,180,42,0.18);}
+.engine-arrow::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:var(--gold);transform:scaleY(0);transform-origin:top;}
+
+.engine-output{margin-top:1.3rem;background:var(--gold);color:var(--darker);padding:1.2rem 1.3rem;display:flex;align-items:center;justify-content:space-between;position:relative;}
+.engine-output-tag{font-family:'Bebas Neue',sans-serif;font-size:0.7rem;letter-spacing:0.2em;}
+.engine-output-name{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.04em;}
+
+/* ─────────────────────────────────────────────────────────────────
+   STATS BAND : moved up, made massive. New peak moment.
+   ───────────────────────────────────────────────────────────────── */
+.stats-band{padding:7rem 8vw 6rem;background:var(--white);}
+.stats-header{text-align:center;max-width:680px;margin:0 auto 4.5rem;}
+.stats-header .section-label{justify-content:center;}
+.stats-header .section-label::before{display:none;}
+.stats-header h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,3.8vw,3.6rem);line-height:1;letter-spacing:0.02em;color:var(--dark);}
+.stats-header h2 em{font-style:normal;color:var(--gold);}
+.stats-header p{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:300;line-height:1.7;color:var(--dark);opacity:0.7;margin-top:1.25rem;}
+
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--light);border-bottom:1px solid var(--light);}
+.stat-cell{padding:3.5rem 2.5rem;border-right:1px solid var(--light);position:relative;transition:background 0.4s ease;}
+.stat-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.5s ease;}
+.stat-cell:last-child{border-right:none;}
+.stat-cell:hover{background:var(--light-2);}
+.stat-cell:hover::before{transform:scaleX(1);}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,9vw,8rem);line-height:0.85;color:var(--gold);margin-bottom:1.5rem;display:block;transition:transform 0.4s ease;}
+.stat-cell:hover .stat-num{transform:translateY(-4px);}
+.stat-headline{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.02em;line-height:1.1;color:var(--dark);margin-bottom:1rem;}
+.stat-detail{font-size:0.88rem;line-height:1.65;color:var(--dark);opacity:0.65;margin-bottom:1.25rem;}
+.stat-source{font-size:0.65rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--dark);opacity:0.4;}
+
+/* THIN DIVIDER BAND between stats and pillars */
+.divider{background:var(--darker);padding:2.5rem 8vw;position:relative;overflow:hidden;}
+.divider::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(244,180,42,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.divider-inner{position:relative;z-index:2;max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;}
+.divider-mark{font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:0.2em;color:var(--gold);opacity:0.45;flex-shrink:0;}
+.divider-line{flex:1;font-family:'Fraunces',serif;font-style:italic;font-size:0.95rem;font-weight:300;line-height:1.5;color:rgba(255,254,254,0.65);text-align:center;}
+
+/* ─────────────────────────────────────────────────────────────────
+   PILLARS : keep the dark band but add a small diagram per pillar
+   ───────────────────────────────────────────────────────────────── */
+.services{background:var(--darker);padding:7rem 8vw;position:relative;overflow:hidden;}
 .services::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(244,180,42,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.05) 1px,transparent 1px);background-size:60px 60px;}
 .services-header{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem;flex-wrap:wrap;gap:2rem;}
 .services-grid{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:rgba(244,180,42,0.2);}
-.service-card{background:var(--dark);padding:3rem 2.5rem;transition:background 0.25s;position:relative;overflow:hidden;}
+.service-card{background:var(--darker);padding:2.5rem 2rem 2rem;transition:background 0.25s;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:1.25rem;}
 .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.35s ease;}
 .service-card:hover::before{transform:scaleX(1);}
 .service-card:hover{background:rgba(75,75,67,0.6);}
-.service-num{font-family:'Bebas Neue',sans-serif;font-size:4rem;color:rgba(244,180,42,0.15);line-height:1;margin-bottom:1.5rem;}
-.service-title{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.04em;color:var(--white);margin-bottom:1rem;line-height:1.1;}
-.service-body{font-size:0.9rem;font-weight:300;line-height:1.75;color:rgba(255,254,254,0.55);}
+.service-num{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:rgba(244,180,42,0.18);line-height:1;}
+.service-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;color:var(--white);line-height:1.1;}
+.service-tags{font-size:0.65rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);opacity:0.85;}
+.service-body{font-size:0.88rem;font-weight:300;line-height:1.7;color:rgba(255,254,254,0.6);}
 
-/* ── LYRAOS SECTION ── */
+/* mini-diagram inside each pillar card */
+.svc-diagram{margin-top:auto;padding-top:1.5rem;border-top:1px solid rgba(255,254,254,0.08);}
+.svc-flow{display:flex;align-items:center;gap:0.5rem;}
+.svc-step{flex:1;text-align:center;padding:0.6rem 0.4rem;border:1px solid rgba(244,180,42,0.3);background:rgba(244,180,42,0.04);font-family:'Bebas Neue',sans-serif;font-size:0.72rem;letter-spacing:0.1em;color:var(--gold);}
+.svc-arrow{color:var(--gold);opacity:0.5;font-size:0.7rem;}
+.svc-step.terminal{background:var(--gold);color:var(--darker);border-color:var(--gold);}
+
+/* ─────────────────────────────────────────────────────────────────
+   LYRAOS : unchanged, just tightened
+   ───────────────────────────────────────────────────────────────── */
 .lyraos{background:var(--white);padding:7rem 8vw;position:relative;overflow:hidden;border-top:1px solid var(--light);}
 .lyraos-inner{position:relative;z-index:2;}
 .lyraos-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem;}
@@ -75,25 +143,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .lyraos-heading em{font-style:normal;color:var(--gold);}
 .lyraos-intro{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:300;line-height:1.8;color:var(--dark);opacity:0.7;}
 .lyraos-body{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-
-/* floating panels */
 .lyraos-panels{display:flex;flex-direction:column;gap:1.2rem;}
-.lp{background:var(--dark);padding:1.8rem 2rem;position:relative;overflow:hidden;}
+.lp{background:var(--darker);padding:1.8rem 2rem;position:relative;overflow:hidden;}
 .lp::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);}
 .lp-label{font-size:0.6rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;}
 .lp-badge{font-size:0.58rem;font-weight:500;letter-spacing:0.08em;background:rgba(244,180,42,0.15);color:var(--gold);padding:0.2rem 0.55rem;border:1px solid rgba(244,180,42,0.3);}
-
-/* panel 1: KPI strip */
 .lp-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);}
-.lp-kpi{background:var(--dark);padding:0.85rem 0.7rem;}
+.lp-kpi{background:var(--darker);padding:0.85rem 0.7rem;}
 .lp-kpi-lbl{font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:0.3rem;}
 .lp-kpi-val{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--gold);line-height:1;}
-
-/* panel 2: timeline */
 .lp-phases{display:flex;align-items:flex-start;margin-top:0.2rem;}
 .lp-ph{display:flex;flex-direction:column;align-items:center;gap:0.3rem;flex:1;}
 .lp-ph-dot{width:1.6rem;height:1.6rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.52rem;font-weight:500;flex-shrink:0;}
-.lp-ph-dot.done{background:var(--gold);color:var(--dark);}
+.lp-ph-dot.done{background:var(--gold);color:var(--darker);}
 .lp-ph-dot.now{background:transparent;border:2px solid var(--gold);color:var(--gold);}
 .lp-ph-dot.soon{background:transparent;border:1.5px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.2);}
 .lp-ph-name{font-size:0.5rem;text-align:center;color:rgba(255,255,255,0.25);letter-spacing:0.03em;line-height:1.3;max-width:3.2rem;}
@@ -101,8 +163,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .lp-ph-name.now{color:rgba(255,255,255,0.55);}
 .lp-line{flex:1;height:1px;background:rgba(255,255,255,0.1);margin-top:0.8rem;}
 .lp-line.done{background:rgba(244,180,42,0.45);}
-
-/* panel 3: tasks */
 .lp-tasks{display:flex;flex-direction:column;gap:0;}
 .lp-task{display:flex;align-items:center;gap:0.65rem;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.05);}
 .lp-task:last-child{border-bottom:none;}
@@ -116,50 +176,88 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .lp-prog-bar{flex:1;height:2px;background:rgba(255,255,255,0.08);}
 .lp-prog-fill{height:100%;width:6%;background:var(--gold);}
 .lp-prog-pct{font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--gold);}
-
-/* benefits */
 .lyraos-benefits{display:flex;flex-direction:column;padding-top:0.5rem;}
-.lyraos-benefit{padding:1.8rem 0;border-bottom:1px solid var(--light);display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:start;}
+.lyraos-benefit{padding:1.6rem 0;border-bottom:1px solid var(--light);display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:start;}
 .lyraos-benefit:first-child{border-top:1px solid var(--light);}
 .lyraos-benefit-icon{width:2.2rem;height:2.2rem;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.85rem;}
 .lyraos-benefit-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.04em;color:var(--dark);margin-bottom:0.4rem;}
 .lyraos-benefit-body{font-size:0.85rem;font-weight:300;line-height:1.75;color:var(--dark);opacity:0.6;}
-.lyraos-cta-row{margin-top:3rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.lyraos-cta-row{margin-top:2rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
 .lyraos-btn{background:var(--gold);color:var(--dark);padding:0.85rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--gold);border-radius:4px;display:inline-block;transition:background 0.22s,color 0.22s,border-color 0.22s,transform 0.15s;}
 .lyraos-btn:hover{background:var(--dark);border-color:var(--dark);color:var(--white);transform:translateY(-2px);}
 .lyraos-note{font-size:0.78rem;color:var(--dark);opacity:0.35;letter-spacing:0.04em;}
 .lyraos-note em{color:var(--gold);opacity:1;font-style:italic;}
 
-.partners{padding:5rem 8vw;background:var(--light);border-top:1px solid rgba(75,75,67,0.12);border-bottom:1px solid rgba(75,75,67,0.12);}
-.partners-block-label{font-size:0.72rem;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;color:var(--dark);opacity:0.45;text-align:center;margin-bottom:2.5rem;display:flex;align-items:center;justify-content:center;gap:1.5rem;}
-.partners-block-label::before,.partners-block-label::after{content:'';flex:1;max-width:140px;height:1px;background:rgba(75,75,67,0.2);}
-.partners-row{display:flex;justify-content:center;align-items:center;gap:4rem;flex-wrap:wrap;}
-.partners-divider{width:100%;height:1px;background:rgba(75,75,67,0.15);margin:3.5rem 0;}
-
-.why{padding:7rem 8vw;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;border-bottom:1px solid var(--light);}
-.why-left{position:sticky;top:120px;}
-.why-quote{font-family:'Fraunces',serif;font-size:clamp(1.2rem,2vw,1.7rem);font-weight:300;font-style:italic;line-height:1.55;color:var(--dark);border-left:3px solid var(--gold);padding-left:2rem;margin-top:2rem;}
+/* ─────────────────────────────────────────────────────────────────
+   WHY : kept, but stats removed (they live up top now).
+   This becomes the "operator credibility" section.
+   ───────────────────────────────────────────────────────────────── */
+.why{padding:7rem 8vw;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center;border-bottom:1px solid var(--light);background:var(--light-2);}
+.why-quote{font-family:'Fraunces',serif;font-size:clamp(1.3rem,2.1vw,1.85rem);font-weight:300;font-style:italic;line-height:1.5;color:var(--dark);border-left:3px solid var(--gold);padding-left:2rem;margin-top:2rem;}
 .why-body{font-size:0.95rem;line-height:1.85;color:var(--dark);opacity:0.7;margin-top:2rem;}
-.why-points{list-style:none;display:flex;flex-direction:column;}
-.why-point{padding:2rem 0;border-bottom:1px solid var(--light);display:grid;grid-template-columns:auto 1fr;gap:1.5rem;align-items:start;}
-.why-point:first-child{border-top:1px solid var(--light);}
-.why-point-icon{width:2.5rem;height:2.5rem;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;}
-.why-point-title{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.04em;color:var(--dark);margin-bottom:0.5rem;}
-.why-point-body{font-size:0.875rem;line-height:1.75;color:var(--dark);opacity:0.65;}
+.why-credentials{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+.why-cred{background:var(--white);padding:1.75rem 1.5rem;border:1px solid var(--light);}
+.why-cred-num{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;color:var(--gold);line-height:1;margin-bottom:0.5rem;}
+.why-cred-label{font-family:'Bebas Neue',sans-serif;font-size:0.95rem;letter-spacing:0.06em;color:var(--dark);line-height:1.2;margin-bottom:0.4rem;}
+.why-cred-body{font-size:0.78rem;line-height:1.5;color:var(--dark);opacity:0.6;}
 
-.cta{padding:8rem 8vw;display:grid;grid-template-columns:1.4fr 1fr;gap:4rem;align-items:center;background:var(--dark);position:relative;overflow:hidden;}
-.cta::after{content:'TIERAXIS';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:18vw;color:rgba(255,254,254,0.025);bottom:-2vw;right:-2vw;line-height:1;pointer-events:none;letter-spacing:0.02em;}
-.cta-label{color:var(--gold)!important;}
-.cta-label::before{background:var(--gold)!important;}
-.cta-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4.5vw,4.5rem);line-height:0.95;letter-spacing:0.02em;color:var(--white);margin-top:1rem;}
+/* ─────────────────────────────────────────────────────────────────
+   PLAYBOOK : redesigned. No more 4-column form crammed in a row.
+   Two-column: cover mock left, form right. Feels like a product, not a CMS dropin.
+   ───────────────────────────────────────────────────────────────── */
+.playbook{padding:7rem 8vw;background:var(--darker);position:relative;overflow:hidden;}
+.playbook::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(244,180,42,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.04) 1px,transparent 1px);background-size:60px 60px;}
+.playbook-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center;}
+.playbook-cover{aspect-ratio:3/4;background:var(--white);padding:2.5rem 2.25rem;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;max-width:380px;}
+.playbook-cover::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--gold);}
+.playbook-cover-tag{font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:0.18em;color:var(--gold-dark);}
+.playbook-cover-title{font-family:'Bebas Neue',sans-serif;font-size:2.1rem;line-height:1;letter-spacing:0.03em;color:var(--dark);margin-top:1.5rem;}
+.playbook-cover-title em{font-style:normal;color:var(--gold);}
+.playbook-cover-meta{display:flex;flex-direction:column;gap:0.4rem;margin-top:1.5rem;}
+.playbook-cover-meta-row{display:flex;justify-content:space-between;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);opacity:0.55;}
+.playbook-cover-bar{height:1px;background:var(--light);margin:0.3rem 0;}
+.playbook-cover-bottom{display:flex;align-items:flex-end;justify-content:space-between;}
+.playbook-cover-brand{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:0.08em;color:var(--dark);}
+.playbook-cover-brand span{color:var(--gold);}
+.playbook-cover-pages{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);opacity:0.4;}
+
+.playbook-content .section-label{color:var(--gold);}
+.playbook-content .section-label::before{background:var(--gold);}
+.playbook-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,3.6vw,3.4rem);line-height:1;letter-spacing:0.02em;color:var(--white);margin-top:0.5rem;margin-bottom:1.25rem;}
+.playbook-heading em{font-style:normal;color:var(--gold);}
+.playbook-body{font-family:'Fraunces',serif;font-size:1.02rem;font-weight:300;line-height:1.75;color:rgba(255,254,254,0.7);max-width:54ch;margin-bottom:2rem;}
+.playbook-points{list-style:none;display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2.25rem;}
+.playbook-point{display:flex;align-items:center;gap:0.85rem;font-size:0.88rem;color:rgba(255,254,254,0.75);}
+.playbook-point::before{content:'';width:14px;height:1px;background:var(--gold);flex-shrink:0;}
+.playbook-form{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;max-width:540px;}
+.playbook-form-field{display:flex;flex-direction:column;gap:0.3rem;}
+.playbook-form-field.full{grid-column:1/-1;}
+.playbook-form-field label{font-size:0.62rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,254,254,0.45);}
+.playbook-form-field input{width:100%;padding:0.75rem 0.9rem;border:1px solid rgba(255,254,254,0.15);background:rgba(255,254,254,0.04);font-family:'DM Sans',sans-serif;font-size:0.92rem;font-weight:400;color:var(--white);border-radius:2px;transition:border-color 0.18s,background 0.18s;}
+.playbook-form-field input:focus{outline:none;border-color:var(--gold);background:rgba(244,180,42,0.05);}
+.playbook-form-submit{grid-column:1/-1;background:var(--gold);color:var(--dark);padding:0.95rem 1.5rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;border:2px solid var(--gold);border-radius:4px;cursor:pointer;transition:background 0.22s,color 0.22s,border-color 0.22s,transform 0.15s;margin-top:0.5rem;}
+.playbook-form-submit:hover{background:var(--white);border-color:var(--white);color:var(--dark);transform:translateY(-2px);}
+.playbook-form-fine{font-size:0.7rem;color:rgba(255,254,254,0.35);letter-spacing:0.02em;line-height:1.5;margin-top:1rem;max-width:540px;}
+.playbook-form-success{display:none;padding:2rem 0;}
+.playbook-form-success.active{display:block;}
+.playbook-form-success-check{width:2.8rem;height:2.8rem;background:var(--gold);color:var(--dark);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.3rem;font-weight:500;}
+.playbook-form-success-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:0.04em;color:var(--white);margin-bottom:0.5rem;}
+.playbook-form-success-body{font-size:0.9rem;font-weight:300;line-height:1.6;color:rgba(255,254,254,0.65);max-width:480px;}
+
+/* ─────────────────────────────────────────────────────────────────
+   CTA : kept similar but uses lighter background to break monotony
+   ───────────────────────────────────────────────────────────────── */
+.cta{padding:8rem 8vw;display:grid;grid-template-columns:1.4fr 1fr;gap:4rem;align-items:center;background:var(--white);position:relative;overflow:hidden;border-top:1px solid var(--light);}
+.cta::after{content:'TIERAXIS';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:18vw;color:rgba(75,75,67,0.04);bottom:-2vw;right:-2vw;line-height:1;pointer-events:none;letter-spacing:0.02em;}
+.cta-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4.5vw,4.5rem);line-height:0.95;letter-spacing:0.02em;color:var(--dark);margin-top:1rem;}
 .cta-heading em{font-style:normal;color:var(--gold);}
 .cta-right{position:relative;z-index:2;}
-.cta-body{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:300;line-height:1.8;color:rgba(255,254,254,0.65);margin-bottom:2.5rem;}
-.cta-email{display:flex;align-items:center;gap:0.75rem;font-size:0.85rem;font-weight:500;letter-spacing:0.05em;color:rgba(255,254,254,0.4);text-decoration:none;margin-top:1.5rem;transition:color 0.2s;}
-.cta-email:hover{color:var(--gold);}
+.cta-body{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:300;line-height:1.8;color:var(--dark);opacity:0.7;margin-bottom:2.5rem;}
+.cta-email{display:flex;align-items:center;gap:0.75rem;font-size:0.85rem;font-weight:500;letter-spacing:0.05em;color:var(--dark);opacity:0.5;text-decoration:none;margin-top:1.5rem;transition:color 0.2s,opacity 0.2s;}
+.cta-email:hover{color:var(--gold-dark);opacity:1;}
 .cta-email::before{content:'✉';font-size:1rem;}
 
-footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+footer{background:var(--darker);padding:2rem 8vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
 .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.08em;color:rgba(255,254,254,0.4);text-decoration:none;}
 .footer-logo span{color:var(--gold);}
 .footer-links{display:flex;gap:2rem;list-style:none;}
@@ -167,63 +265,90 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
 .footer-links a:hover{color:var(--gold);}
 .footer-copy{font-size:0.72rem;color:rgba(255,254,254,0.2);letter-spacing:0.05em;}
 
-/* ── PLAYBOOK STRIP ── */
-.playbook-strip{padding:4.5rem 8vw;background:var(--light);border-top:1px solid rgba(75,75,67,0.12);border-bottom:1px solid rgba(75,75,67,0.12);}
-.playbook-strip-inner{max-width:900px;margin:0 auto;text-align:center;}
-.playbook-strip-inner .section-label{justify-content:center;}
-.playbook-strip-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,3.2vw,3rem);line-height:1;letter-spacing:0.02em;color:var(--dark);margin-top:0.5rem;margin-bottom:1rem;}
-.playbook-strip-heading em{font-style:normal;color:var(--gold-dark);}
-.playbook-strip-body{font-family:'Fraunces',serif;font-size:1rem;font-weight:300;line-height:1.7;color:var(--dark);opacity:0.75;max-width:56ch;margin:0 auto;}
-.playbook-cover{background:var(--dark);width:220px;padding:2.2rem 2rem;display:flex;flex-direction:column;gap:1rem;position:relative;overflow:hidden;flex-shrink:0;}
-.playbook-cover::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);}
-.playbook-cover::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(244,180,42,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.05) 1px,transparent 1px);background-size:24px 24px;}
-.playbook-cover-top{position:relative;z-index:2;}
-.playbook-cover-tag{font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:0.15em;color:var(--gold);}
-.playbook-cover-title{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;line-height:1.1;letter-spacing:0.03em;color:var(--white);position:relative;z-index:2;}
-.playbook-cover-sub{font-family:'Fraunces',serif;font-size:0.75rem;font-weight:300;font-style:italic;line-height:1.5;color:rgba(255,254,254,0.45);position:relative;z-index:2;}
-.playbook-cover-footer{font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,254,254,0.25);position:relative;z-index:2;margin-top:auto;padding-top:1.5rem;border-top:1px solid rgba(255,254,254,0.08);}
-@media(max-width:900px){
-  .playbook-strip-inner{grid-template-columns:1fr;gap:3rem;}
-  .playbook-cover{width:100%;max-width:280px;}
-}
-
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
-.fade-up{opacity:1;animation:fadeUp 0.8s ease forwards;}
+.fade-up{opacity:0;animation:fadeUp 0.8s ease forwards;}
 .delay-1{animation-delay:0.1s;}.delay-2{animation-delay:0.25s;}.delay-3{animation-delay:0.4s;}.delay-4{animation-delay:0.55s;}
-.reveal{opacity:1;transform:none;transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .reveal.visible{opacity:1;transform:none;}
 
-/* ── PLAYBOOK OPT-IN FORM (COMPACT) ── */
-.playbook-form{background:var(--white);border:1px solid var(--light);padding:1.5rem;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:0.75rem;align-items:end;max-width:900px;margin:2rem auto 0.75rem;}
-.playbook-form-field{display:flex;flex-direction:column;gap:0.3rem;}
-.playbook-form-field label{font-size:0.65rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--dark);opacity:0.6;}
-.playbook-form-field input{width:100%;padding:0.7rem 0.85rem;border:1px solid var(--light);background:var(--white);font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:400;color:var(--dark);border-radius:2px;transition:border-color 0.18s;}
-.playbook-form-field input:focus{outline:none;border-color:var(--gold-dark);}
-.playbook-form-submit{background:var(--gold);color:var(--dark);padding:0.7rem 1.4rem;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;border:2px solid var(--gold);border-radius:4px;cursor:pointer;transition:background 0.22s,color 0.22s,border-color 0.22s,transform 0.15s;white-space:nowrap;height:38px;}
-.playbook-form-submit:hover{background:var(--dark);border-color:var(--dark);color:var(--white);transform:translateY(-2px);}
-.playbook-form-fine{font-size:0.7rem;color:var(--dark);opacity:0.45;letter-spacing:0.02em;line-height:1.5;text-align:center;max-width:600px;margin:0 auto;}
-.playbook-form-success{display:none;text-align:center;padding:1.5rem 0;}
-.playbook-form-success.active{display:block;}
-.playbook-form-success-check{width:2.8rem;height:2.8rem;background:var(--gold);color:var(--dark);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.3rem;font-weight:500;}
-.playbook-form-success-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.05em;color:var(--dark);margin-bottom:0.5rem;}
-.playbook-form-success-body{font-size:0.85rem;font-weight:300;line-height:1.6;color:var(--dark);opacity:0.65;max-width:480px;margin:0 auto;}
-@media(max-width:900px){
-  .playbook-form{grid-template-columns:1fr;gap:1rem;max-width:420px;}
-  .playbook-form-submit{width:100%;}
+/* Engine slide-in animation */
+@keyframes slideInRight{from{opacity:0;transform:translateX(40px);}to{opacity:1;transform:translateX(0);}}
+
+/* LOOP ANIMATIONS : pulse traveling through the engine */
+@keyframes drawDown{
+  0%{transform:scaleY(0);transform-origin:top;}
+  18%{transform:scaleY(1);transform-origin:top;}
+  35%{transform:scaleY(1);transform-origin:bottom;}
+  50%,100%{transform:scaleY(0);transform-origin:bottom;}
+}
+@keyframes nodeFlash{
+  0%,100%{background:rgba(244,180,42,0.04);border-color:rgba(244,180,42,0.25);box-shadow:0 0 0 0 rgba(244,180,42,0);}
+  50%{background:rgba(244,180,42,0.13);border-color:rgba(244,180,42,0.65);box-shadow:0 0 24px -4px rgba(244,180,42,0.4);}
+}
+@keyframes nodeNameGlow{
+  0%,100%{color:var(--white);}
+  50%{color:var(--gold);}
+}
+@keyframes outputFlash{
+  0%,100%{box-shadow:0 0 0 0 rgba(244,180,42,0);}
+  50%{box-shadow:0 0 32px 4px rgba(244,180,42,0.55);}
 }
 
+/* Total cycle: 6s (default), 2.5s on hover */
+.engine{--engine-cycle:6s;}
+.engine:hover{--engine-cycle:2.5s;}
+
+/* Entry animations (run once) */
+.engine-label{opacity:0;animation:slideInRight 0.7s ease 0.7s forwards;}
+.engine-title{opacity:0;animation:slideInRight 0.7s ease 0.85s forwards;}
+
+/* Each node: entry slide-in + looping flash. Loop starts at 3.0s (after entry settles).
+   Stagger: node1 at 3.0s, node2 at 3.4s, node3 at 4.1s. */
+.engine-node{opacity:0;}
+.engine-node:nth-of-type(1){animation:slideInRight 0.6s ease 1.0s forwards,nodeFlash var(--engine-cycle) ease-in-out 3.0s infinite;}
+.engine-node:nth-of-type(3){animation:slideInRight 0.6s ease 1.25s forwards,nodeFlash var(--engine-cycle) ease-in-out 3.4s infinite;}
+.engine-node:nth-of-type(5){animation:slideInRight 0.6s ease 1.5s forwards,nodeFlash var(--engine-cycle) ease-in-out 4.1s infinite;}
+
+/* Node names glow gold as the pulse hits them */
+.engine-node:nth-of-type(1) .engine-node-name{animation:nodeNameGlow var(--engine-cycle) ease-in-out 3.0s infinite;}
+.engine-node:nth-of-type(3) .engine-node-name{animation:nodeNameGlow var(--engine-cycle) ease-in-out 3.4s infinite;}
+.engine-node:nth-of-type(5) .engine-node-name{animation:nodeNameGlow var(--engine-cycle) ease-in-out 4.1s infinite;}
+
+/* Connector arrows : draw down between each pair of nodes.
+   Arrow timing offset to fall between the two nodes it connects. */
+.engine-arrow{opacity:0;animation:slideInRight 0.5s ease forwards;}
+.engine-arrow:nth-of-type(2){animation-delay:1.15s;}
+.engine-arrow:nth-of-type(4){animation-delay:1.4s;}
+.engine-arrow:nth-of-type(2)::before{animation:drawDown var(--engine-cycle) ease-in-out 3.2s infinite;}
+.engine-arrow:nth-of-type(4)::before{animation:drawDown var(--engine-cycle) ease-in-out 3.7s infinite;}
+
+/* Output card : entry slide + looping flash when pulse arrives */
+.engine-output{opacity:0;animation:slideInRight 0.7s ease 1.7s forwards,outputFlash var(--engine-cycle) ease-in-out 4.7s infinite;}
+
+/* Reduce motion: kill loops, keep entry */
+@media (prefers-reduced-motion: reduce){
+  .engine-node,.engine-node-name,.engine-arrow::before,.engine-output{
+    animation-iteration-count:1!important;
+  }
+}
+
+@media(max-width:1100px){
+  .stats-grid{grid-template-columns:1fr;}
+  .stat-cell{border-right:none;border-bottom:1px solid var(--light);}
+  .stat-cell:last-child{border-bottom:none;}
+}
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;}
-  .hero-right{min-height:280px;}
-  .where{grid-template-columns:1fr;gap:3rem;}
+  .hero-right{min-height:480px;padding:2rem;}
   .services-grid{grid-template-columns:1fr;}
   .lyraos-header{grid-template-columns:1fr;gap:2rem;}
   .lyraos-body{grid-template-columns:1fr;}
   .why{grid-template-columns:1fr;}
-  .why-left{position:static;}
+  .why-credentials{grid-template-columns:1fr 1fr;}
+  .playbook-inner{grid-template-columns:1fr;gap:3rem;}
+  .playbook-cover{max-width:280px;margin:0 auto;}
   .cta{grid-template-columns:1fr;}
   .nav-links{display:none;}
-  .partners-row{gap:2rem;}
 }
 </style>
 </head>
@@ -239,6 +364,7 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
   </ul>
 </nav>
 
+<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-left">
     <p class="hero-eyebrow fade-up delay-1">AWS Partner Acceleration · Marketplace Revenue · Delivery Teams</p>
@@ -248,61 +374,144 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
       <a href="contact.html" class="btn-primary">Accelerate your partnership</a>
       <a href="services.html" class="btn-ghost">See how we work</a>
     </div>
-    <div style="margin-top:2rem;">
-      <img src="https://raw.githubusercontent.com/TierAxis/images/main/aws-logo.png" alt="AWS Partner" style="height:80px;opacity:0.9;margin-top:0.5rem;">
+    <div class="hero-trust fade-up delay-4">
+      <span class="hero-trust-label">Built for</span>
+      <div class="hero-trust-logos">
+        <img src="https://raw.githubusercontent.com/TierAxis/images/main/aws-logo.png" alt="AWS Partner">
+      </div>
     </div>
   </div>
+
   <div class="hero-right">
-    <img src="https://raw.githubusercontent.com/TierAxis/images/main/IMG_2233%20(1).jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.10;z-index:1;">
-    <div class="hero-stat-grid">
-      <div class="hero-stat"><div class="hero-stat-num">AWS</div><div class="hero-stat-label">Partnership Accelerated</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">MKT</div><div class="hero-stat-label">Marketplace Closing</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">DEAL</div><div class="hero-stat-label">Pipeline Moving</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">FUND</div><div class="hero-stat-label">Programs Unlocked</div></div>
+    <div class="engine">
+      <p class="engine-label">The Partnership Engine</p>
+      <h2 class="engine-title">Three motions.<br><em>One revenue line.</em></h2>
+      <div class="engine-flow">
+        <div class="engine-node">
+          <span class="engine-node-tag">01</span>
+          <span class="engine-node-name">Co-Sell with AWS</span>
+          <span class="engine-node-meta">Pipeline</span>
+        </div>
+        <div class="engine-arrow">↓</div>
+        <div class="engine-node">
+          <span class="engine-node-tag">02</span>
+          <span class="engine-node-name">Marketplace</span>
+          <span class="engine-node-meta">Procurement</span>
+        </div>
+        <div class="engine-arrow">↓</div>
+        <div class="engine-node">
+          <span class="engine-node-tag">03</span>
+          <span class="engine-node-name">Funding & Programs</span>
+          <span class="engine-node-meta">Access</span>
+        </div>
+        <div class="engine-output">
+          <span class="engine-output-tag">Output</span>
+          <span class="engine-output-name">Closed Revenue</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="where">
-  <div class="reveal">
-    <p class="section-label">What You Get</p>
-    <h2 class="section-heading">Partnership<br>that produces<br>revenue.</h2>
+<!-- ── STATS BAND : moved up from bottom, made the visual peak ── -->
+<section class="stats-band">
+  <div class="stats-header reveal">
+    <p class="section-label">The Numbers</p>
+    <h2>What an active AWS partnership <em>actually produces.</em></h2>
   </div>
-  <div class="where-body reveal">
-    <p style="margin-bottom:2rem;"><span style="font-family:'Fraunces',serif;font-size:1.15rem;font-style:italic;color:var(--dark);display:block;margin-bottom:0.75rem;font-weight:400;">AWS selling alongside your team.</span>We work with your sales team so AWS reps bring you into their conversations and stay engaged through the close. A shared account list, a story they can repeat, and a clean handoff into live deals. Your partnership becomes a source of pipeline.</p>
-    <p style="margin-bottom:2rem;"><span style="font-family:'Fraunces',serif;font-size:1.15rem;font-style:italic;color:var(--dark);display:block;margin-bottom:0.75rem;font-weight:400;">Marketplace as a revenue lane.</span>We turn your Marketplace presence into closed business. Pricing your buyers' procurement teams will approve, custom deals tied to real pipeline, and the billing and contracts that hold up when a large customer signs. This is where partners close seven-figure deals.</p>
-    <p style="margin-bottom:2rem;"><span style="font-family:'Fraunces',serif;font-size:1.15rem;font-style:italic;color:var(--dark);display:block;margin-bottom:0.75rem;font-weight:400;">The programs and funding you've earned.</span>There's real money and real access available to AWS partners. Funding to move customers to the cloud, funding for marketing, and rewards for the deals you bring in. Each pool has rules about when you can ask and what you have to show. We know the rules, we know the timing, and we know how to open the door.</p>
-    <a href="services.html">See how we accelerate →</a>
+  <div class="stats-grid">
+    <div class="stat-cell reveal">
+      <span class="stat-num">51%</span>
+      <h3 class="stat-headline">More revenue selling alongside AWS</h3>
+      <p class="stat-detail">Partners who actively sell with AWS grow 51% faster than partners who stay enrolled but inactive.</p>
+      <p class="stat-source">Canalys · 2024</p>
+    </div>
+    <div class="stat-cell reveal" style="transition-delay:0.1s">
+      <span class="stat-num">$7</span>
+      <h3 class="stat-headline">In services revenue per $1 of AWS sold</h3>
+      <p class="stat-detail">Partners who work the full partnership see seven dollars in services revenue for every dollar of AWS sold. Selling alongside, closing through Marketplace, delivering after.</p>
+      <p class="stat-source">Omdia · 2025</p>
+    </div>
+    <div class="stat-cell reveal" style="transition-delay:0.2s">
+      <span class="stat-num">4×</span>
+      <h3 class="stat-headline">Larger deals through Marketplace custom offers</h3>
+      <p class="stat-detail">Deals closed through AWS Marketplace with a custom offer come in four to five times larger than standard listings, and they close faster.</p>
+      <p class="stat-source">AWS Partner Data · 2024</p>
+    </div>
   </div>
 </section>
 
+<!-- THIN DIVIDER: breaks white-on-white between stats and three pillars -->
+<section class="divider">
+  <div class="divider-inner">
+    <span class="divider-mark">A</span>
+    <p class="divider-line">An AWS partnership only produces revenue when three motions run together. Here's how we run them.</p>
+    <span class="divider-mark">B</span>
+  </div>
+</section>
+
+<!-- THREE PILLARS -->
 <section class="services" id="services">
   <div class="services-header reveal">
     <div>
-      <p class="section-label" style="color:var(--gold);">How We Accelerate</p>
+      <p class="section-label" style="color:var(--gold);">How It Works</p>
       <h2 class="section-heading" style="color:var(--white)">Three pillars.<br>One engine.</h2>
     </div>
   </div>
   <div class="services-grid">
+
     <div class="service-card reveal">
       <div class="service-num">01</div>
-      <div class="service-title">Accelerate your pipeline with AWS</div>
-      <p class="service-body">Selling with AWS · Funding · Program Access<br><br>We work with your sales team so AWS reps bring you into their conversations and stay engaged through the close. We open the programs and funding you qualify for, and time the asks for when they get approved. We've been inside these programs long enough to know how.</p>
+      <div class="service-title">Pipeline through AWS</div>
+      <p class="service-tags">Selling with AWS · Funding · Program Access</p>
+      <p class="service-body">We work with your sales team so AWS reps bring you into their conversations and stay engaged through the close. We open the programs and funding you qualify for, and time the asks for when they get approved.</p>
+      <div class="svc-diagram">
+        <div class="svc-flow">
+          <div class="svc-step">Identify</div>
+          <span class="svc-arrow">→</span>
+          <div class="svc-step">Co-Sell</div>
+          <span class="svc-arrow">→</span>
+          <div class="svc-step terminal">Pipeline</div>
+        </div>
+      </div>
     </div>
+
     <div class="service-card reveal" style="transition-delay:0.12s">
       <div class="service-num">02</div>
-      <div class="service-title">Accelerate through the Marketplace</div>
-      <p class="service-body">Listings · Custom Deals · Procurement<br><br>We turn your Marketplace presence into a revenue lane. Pricing your buyers' procurement teams will approve, custom deals tied to real pipeline, and the billing and contracts that hold up when a large customer signs. This is where partners close seven-figure deals.</p>
+      <div class="service-title">Revenue through Marketplace</div>
+      <p class="service-tags">Listings · Custom Deals · Procurement</p>
+      <p class="service-body">We turn your Marketplace presence into closed business. Pricing buyers will approve, custom deals tied to real pipeline, and the billing and contracts that hold up when a large customer signs.</p>
+      <div class="svc-diagram">
+        <div class="svc-flow">
+          <div class="svc-step">List</div>
+          <span class="svc-arrow">→</span>
+          <div class="svc-step">Price</div>
+          <span class="svc-arrow">→</span>
+          <div class="svc-step terminal">Close</div>
+        </div>
+      </div>
     </div>
+
     <div class="service-card reveal" style="transition-delay:0.24s">
       <div class="service-num">03</div>
-      <div class="service-title">Accelerate delivery</div>
-      <p class="service-body">Delivery Teams · Domain Experts · Execution<br><br>We learn your project first. What's being built, what rules it has to follow, what the deadline is. Then we assemble a team from a trusted network of operators who have done this exact type of work before. The right fit for the initiative in front of you.</p>
+      <div class="service-title">Delivery, on the right team</div>
+      <p class="service-tags">Delivery Teams · Domain Experts · Execution</p>
+      <p class="service-body">We learn your project first. What's being built, what rules it has to follow, what the deadline is. Then we assemble a team from a trusted network of operators who have done this exact type of work before.</p>
+      <div class="svc-diagram">
+        <div class="svc-flow">
+          <div class="svc-step">Scope</div>
+          <span class="svc-arrow">→</span>
+          <div class="svc-step">Assemble</div>
+          <span class="svc-arrow">→</span>
+          <div class="svc-step terminal">Deliver</div>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
 
-<!-- ── LYRAOS SECTION ── -->
+<!-- ── LYRAOS : kept intact ── -->
 <section class="lyraos" id="lyraos">
   <div class="lyraos-inner">
     <div class="lyraos-header reveal">
@@ -314,15 +523,12 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
     </div>
 
     <div class="lyraos-body">
-      <!-- Floating Panels -->
       <div class="lyraos-panels reveal">
-
-        <!-- Panel 1: Engagement Snapshot -->
         <div class="lp">
           <div class="lp-label">Engagement Snapshot <span class="lp-badge">Active</span></div>
           <div class="lp-kpis">
             <div class="lp-kpi"><div class="lp-kpi-lbl">AWS Spend</div><div class="lp-kpi-val">$15K/mo</div></div>
-            <div class="lp-kpi"><div class="lp-kpi-lbl">FTR Target</div><div class="lp-kpi-val">Jun 30</div></div>
+            <div class="lp-kpi"><div class="lp-kpi-lbl">Tech Review</div><div class="lp-kpi-val">Jun 30</div></div>
             <div class="lp-kpi"><div class="lp-kpi-lbl">Days Left</div><div class="lp-kpi-val">108</div></div>
           </div>
           <div class="lp-prog-row">
@@ -332,7 +538,6 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
           </div>
         </div>
 
-        <!-- Panel 2: Milestone Timeline -->
         <div class="lp">
           <div class="lp-label">Milestone Timeline</div>
           <div class="lp-phases">
@@ -340,55 +545,52 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
             <div class="lp-line done"></div>
             <div class="lp-ph"><div class="lp-ph-dot done">✓</div><div class="lp-ph-name done">Playbook</div></div>
             <div class="lp-line"></div>
-            <div class="lp-ph"><div class="lp-ph-dot now">30</div><div class="lp-ph-name now">Foundation &amp; FTR</div></div>
+            <div class="lp-ph"><div class="lp-ph-dot now">30</div><div class="lp-ph-name now">Foundation &amp; Tech Review</div></div>
             <div class="lp-line"></div>
-            <div class="lp-ph"><div class="lp-ph-dot soon">60</div><div class="lp-ph-name">WAFR &amp; ACE</div></div>
+            <div class="lp-ph"><div class="lp-ph-dot soon">60</div><div class="lp-ph-name">Architecture &amp; Co-Sell</div></div>
             <div class="lp-line"></div>
             <div class="lp-ph"><div class="lp-ph-dot soon">90</div><div class="lp-ph-name">Co-Sell Scale</div></div>
           </div>
         </div>
 
-        <!-- Panel 3: Task Ownership -->
         <div class="lp">
-          <div class="lp-label">FTR Readiness <span class="lp-badge">1 of 13 done</span></div>
+          <div class="lp-label">Tech Review Readiness <span class="lp-badge">1 of 13 done</span></div>
           <div class="lp-tasks">
             <div class="lp-task"><div class="lp-task-dot done"></div><div class="lp-task-txt done">AWS architecture inventory complete</div><div class="lp-task-own">TierAxis</div></div>
-            <div class="lp-task"><div class="lp-task-dot open"></div><div class="lp-task-txt">Confirm AWS Account ID and APN Partner ID</div><div class="lp-task-own">You</div></div>
+            <div class="lp-task"><div class="lp-task-dot open"></div><div class="lp-task-txt">Confirm AWS account ID and partner ID</div><div class="lp-task-own">You</div></div>
             <div class="lp-task"><div class="lp-task-dot open"></div><div class="lp-task-txt">Initiate Well-Architected Review</div><div class="lp-task-own">TierAxis</div></div>
             <div class="lp-task"><div class="lp-task-dot open"></div><div class="lp-task-txt">Confirm encryption posture across services</div><div class="lp-task-own">You</div></div>
           </div>
         </div>
-
       </div>
 
-      <!-- Benefits -->
       <div class="lyraos-benefits reveal" style="transition-delay:0.12s">
         <div class="lyraos-benefit">
           <div class="lyraos-benefit-icon">◎</div>
           <div>
-            <div class="lyraos-benefit-title">Momentum from day one</div>
-            <p class="lyraos-benefit-body">From the first week, your partnership runs on a proven structure. The plan, the workstreams, and the milestones are already built. Your team steps into a track refined through years of AWS partnership work.</p>
+            <div class="lyraos-benefit-title">A plan that's already built</div>
+            <p class="lyraos-benefit-body">From the first week, your partnership runs on a structure refined through years of AWS partnership work. The plan is ready before we start.</p>
           </div>
         </div>
         <div class="lyraos-benefit">
           <div class="lyraos-benefit-icon">◈</div>
           <div>
-            <div class="lyraos-benefit-title">Clear ownership on every task</div>
-            <p class="lyraos-benefit-body">Every task carries a clear owner. What TierAxis is driving and what your team owns is visible at all times. The structure keeps both sides moving forward together.</p>
+            <div class="lyraos-benefit-title">Every task has a name on it</div>
+            <p class="lyraos-benefit-body">What TierAxis is doing and what your team owns is visible at all times. Nothing falls through the cracks because everything has an owner.</p>
           </div>
         </div>
         <div class="lyraos-benefit">
           <div class="lyraos-benefit-icon">▲</div>
           <div>
-            <div class="lyraos-benefit-title">Built around AWS acceleration</div>
-            <p class="lyraos-benefit-body">Program access, co-sell motion, seller materials, and Marketplace revenue are sequenced in the order that produces results. Years of AWS experience built into the structure your partnership runs on.</p>
+            <div class="lyraos-benefit-title">Ordered for revenue</div>
+            <p class="lyraos-benefit-body">Program access, co-sell motion, seller materials, and Marketplace deals are sequenced in the order that closes business.</p>
           </div>
         </div>
         <div class="lyraos-benefit">
           <div class="lyraos-benefit-icon">⚙</div>
           <div>
-            <div class="lyraos-benefit-title">One system. Both sides.</div>
-            <p class="lyraos-benefit-body">You and your TierAxis team work inside the same platform. Tasks checked off, contacts in one place, progress tracked in real time. Full visibility at every stage.</p>
+            <div class="lyraos-benefit-title">One platform. Both teams.</div>
+            <p class="lyraos-benefit-body">You and your TierAxis team work inside the same system. Tasks checked off, contacts in one place, progress tracked in real time.</p>
           </div>
         </div>
         <div class="lyraos-cta-row">
@@ -400,82 +602,111 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
   </div>
 </section>
 
+<!-- ── WHY (operator credibility, no stats) ── -->
 <section class="why" id="why">
-  <div class="why-left reveal">
+  <div class="reveal">
     <p class="section-label">Why TierAxis</p>
     <h2 class="section-heading">We built AWS<br>partnerships<br>from inside.</h2>
     <blockquote class="why-quote">"We've opened the funding, run the Marketplace, and closed the deals at companies where the work had to move."</blockquote>
-    <p class="why-body">The TierAxis team spent years running AWS partnerships from the inside, driving co-sell, unlocking funding, and building Marketplace revenue at companies where outcomes were the only measure. That experience is in every partnership we accelerate.</p>
+    <p class="why-body">The TierAxis team spent years running AWS partnerships from the inside, driving co-sell, unlocking funding, and building Marketplace revenue at companies where outcomes were the only measure.</p>
   </div>
-  <ul class="why-points">
-    <li class="why-point reveal">
-      <div class="why-point-icon">51%</div>
-      <div>
-        <div class="why-point-title">More revenue when partners sell alongside AWS</div>
-        <p class="why-point-body">Partners who actively sell with AWS grow 51% faster. Active is where the growth lives, and TierAxis gets your partnership there. (Canalys, 2024)</p>
-      </div>
-    </li>
-    <li class="why-point reveal" style="transition-delay:0.1s">
-      <div class="why-point-icon">$7</div>
-      <div>
-        <div class="why-point-title">In services revenue for every $1 of AWS sold</div>
-        <p class="why-point-body">Partners who work the full partnership (selling alongside AWS, closing through the Marketplace, and delivering) see a seven-to-one multiplier on every dollar of AWS sold. (Omdia, 2025)</p>
-      </div>
-    </li>
-    <li class="why-point reveal" style="transition-delay:0.2s">
-      <div class="why-point-icon">4x</div>
-      <div>
-        <div class="why-point-title">Larger deals through Marketplace custom offers</div>
-        <p class="why-point-body">Deals closed through AWS Marketplace with a custom offer come in four to five times larger than standard listings, and they close faster. (AWS Partner data, 2024)</p>
-      </div>
-    </li>
-  </ul>
-</section>
-
-<!-- ── PLAYBOOK SECTION ── -->
-<section class="playbook-strip">
-  <div class="playbook-strip-inner reveal">
-    <p class="section-label">Free Resource</p>
-    <h2 class="playbook-strip-heading">The AWS Partner <em>Acceleration Playbook</em></h2>
-    <p class="playbook-strip-body">The framework we use to accelerate AWS partnerships. How to bring AWS into your deals, open the programs you qualify for, and turn Marketplace into revenue.</p>
-
-    <form class="playbook-form" id="playbook-form" name="playbook" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handlePlaybookSubmit(event)">
-      <input type="hidden" name="form-name" value="playbook">
-      <p style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
-      <div class="playbook-form-field">
-        <label for="pb-name">Full name</label>
-        <input type="text" id="pb-name" name="name" required autocomplete="name">
-      </div>
-      <div class="playbook-form-field">
-        <label for="pb-email">Work email</label>
-        <input type="email" id="pb-email" name="email" required autocomplete="email">
-      </div>
-      <div class="playbook-form-field">
-        <label for="pb-company">Company</label>
-        <input type="text" id="pb-company" name="company" required autocomplete="organization">
-      </div>
-      <button type="submit" class="playbook-form-submit">Send it</button>
-    </form>
-    <p class="playbook-form-fine">Instant download. We'll add you to the list for occasional notes when we publish something worth your time. No spam.</p>
-
-    <div class="playbook-form-success" id="playbook-form-success">
-      <div class="playbook-form-success-check">✓</div>
-      <div class="playbook-form-success-title">Your download is starting.</div>
-      <p class="playbook-form-success-body">If it doesn't start automatically, <a href="https://raw.githubusercontent.com/TierAxis/Files/main/TierAxis_AWS_Partner_Revenue_Playbook.pdf" style="color:var(--gold-dark);font-weight:500;" download>click here</a>. If you'd like to talk through it, reach out at info@TierAxis.com.</p>
+  <div class="why-credentials reveal" style="transition-delay:0.1s">
+    <div class="why-cred">
+      <div class="why-cred-num">10+</div>
+      <div class="why-cred-label">Years inside AWS partnerships</div>
+      <p class="why-cred-body">Operators who've run alliance, co-sell, and Marketplace from the partner side.</p>
+    </div>
+    <div class="why-cred">
+      <div class="why-cred-num">$50M+</div>
+      <div class="why-cred-label">In partner-influenced revenue</div>
+      <p class="why-cred-body">Pipeline, Marketplace deals, and program funding unlocked across prior roles.</p>
+    </div>
+    <div class="why-cred">
+      <div class="why-cred-num">100%</div>
+      <div class="why-cred-label">Operator-led work</div>
+      <p class="why-cred-body">Senior operators only. The people you scope with are the people running the work.</p>
+    </div>
+    <div class="why-cred">
+      <div class="why-cred-num">1</div>
+      <div class="why-cred-label">Platform every engagement runs on</div>
+      <p class="why-cred-body">LyraOS keeps both sides on the same milestones, tasks, and timeline.</p>
     </div>
   </div>
 </section>
 
+<!-- ── PLAYBOOK : redesigned with cover mock + form together ── -->
+<section class="playbook">
+  <div class="playbook-inner">
+    <div class="reveal">
+      <div class="playbook-cover">
+        <div>
+          <p class="playbook-cover-tag">Free Resource</p>
+          <h3 class="playbook-cover-title">The AWS Partner<br><em>Acceleration Playbook</em></h3>
+          <div class="playbook-cover-meta">
+            <div class="playbook-cover-bar"></div>
+            <div class="playbook-cover-meta-row"><span>Section 01</span><span>Co-Sell</span></div>
+            <div class="playbook-cover-bar"></div>
+            <div class="playbook-cover-meta-row"><span>Section 02</span><span>Marketplace</span></div>
+            <div class="playbook-cover-bar"></div>
+            <div class="playbook-cover-meta-row"><span>Section 03</span><span>Funding</span></div>
+            <div class="playbook-cover-bar"></div>
+          </div>
+        </div>
+        <div class="playbook-cover-bottom">
+          <span class="playbook-cover-brand">Tier<span>Axis</span></span>
+          <span class="playbook-cover-pages">2026 Edition</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="playbook-content reveal" style="transition-delay:0.12s">
+      <p class="section-label">Free Download</p>
+      <h2 class="playbook-heading">The framework, <em>in your inbox.</em></h2>
+      <p class="playbook-body">The same framework we use inside AWS partnerships. How to bring AWS into your deals, open the programs you qualify for, and turn Marketplace into closed business.</p>
+      <ul class="playbook-points">
+        <li class="playbook-point">The four programs every AWS partner should be using by year two</li>
+        <li class="playbook-point">The Marketplace pricing structure that procurement teams approve</li>
+        <li class="playbook-point">The weekly co-sell motion that gets AWS reps bringing you into deals</li>
+      </ul>
+
+      <form class="playbook-form" id="playbook-form" name="playbook" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handlePlaybookSubmit(event)">
+        <input type="hidden" name="form-name" value="playbook">
+        <p style="display:none;"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+        <div class="playbook-form-field">
+          <label for="pb-name">Full name</label>
+          <input type="text" id="pb-name" name="name" required autocomplete="name">
+        </div>
+        <div class="playbook-form-field">
+          <label for="pb-company">Company</label>
+          <input type="text" id="pb-company" name="company" required autocomplete="organization">
+        </div>
+        <div class="playbook-form-field full">
+          <label for="pb-email">Work email</label>
+          <input type="email" id="pb-email" name="email" required autocomplete="email">
+        </div>
+        <button type="submit" class="playbook-form-submit">Send the playbook →</button>
+      </form>
+      <p class="playbook-form-fine">Instant download. We'll add you to the list for occasional notes when we publish something worth your time. Unsubscribe anytime.</p>
+
+      <div class="playbook-form-success" id="playbook-form-success">
+        <div class="playbook-form-success-check">✓</div>
+        <div class="playbook-form-success-title">Your download is starting.</div>
+        <p class="playbook-form-success-body">If it doesn't start automatically, <a href="https://raw.githubusercontent.com/TierAxis/Files/main/TierAxis_AWS_Partner_Revenue_Playbook.pdf" style="color:var(--gold);font-weight:500;" download>click here</a>. To talk through it, reach out at info@TierAxis.com.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
 <section class="cta" id="cta">
   <div style="position:relative;z-index:2" class="reveal">
-    <p class="section-label cta-label">Start the Conversation</p>
+    <p class="section-label">Start the Conversation</p>
     <h2 class="cta-heading">Let's accelerate<br>your AWS<br><em>partnership.</em></h2>
   </div>
   <div class="cta-right reveal" style="transition-delay:0.15s">
-    <p class="cta-body">45 minutes. No cost. We come prepared. You'll leave with a clear view of where your AWS partnership is today, the next move, and how fast you can get there.</p>
+    <p class="cta-body">45 minutes. On us. We come prepared. You'll leave with a clear view of where your AWS partnership is today, the next move, and how fast you can get there.</p>
     <a href="contact.html" class="btn-primary">Accelerate your partnership</a>
-    <a href="/cdn-cgi/l/email-protection#1c75727a735c4875796e5d64756f327f7371" class="cta-email"><span class="__cf_email__" data-cfemail="21484f474e6175484453605948520f424e4c">[email&#160;protected]</span></a>
-    <p style="margin-top:1.5rem;font-size:0.78rem;color:rgba(255,254,254,0.3);letter-spacing:0.04em;">Every partnership starts with honesty about what will actually move.</p>
+    <a href="mailto:info@TierAxis.com" class="cta-email">info@TierAxis.com</a>
   </div>
 </section>
 
@@ -492,13 +723,11 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
   <p class="footer-copy">&copy; 2026 TierAxis &middot; Accelerate the partnership.</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('visible');
   });
 }, { threshold: 0.15 });
 reveals.forEach(el => observer.observe(el));
@@ -508,15 +737,12 @@ function handlePlaybookSubmit(event) {
   const form = document.getElementById('playbook-form');
   const data = new FormData(form);
   const playbookUrl = 'https://raw.githubusercontent.com/TierAxis/Files/main/TierAxis_AWS_Partner_Revenue_Playbook.pdf';
-
-  // Submit to Netlify Forms
   fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(data).toString()
   })
   .then(() => {
-    // Trigger the download
     const a = document.createElement('a');
     a.href = playbookUrl;
     a.download = 'TierAxis_AWS_Partner_Acceleration_Playbook.pdf';
@@ -524,8 +750,6 @@ function handlePlaybookSubmit(event) {
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-
-    // Show success state
     form.style.display = 'none';
     const fine = document.querySelector('.playbook-form-fine');
     if (fine) fine.style.display = 'none';
