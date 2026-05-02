@@ -30,8 +30,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .section-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4vw,4rem);line-height:1;letter-spacing:0.02em;color:var(--dark);}
 .btn-primary{background:var(--gold);color:var(--dark);padding:0.85rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--gold);border-radius:4px;transition:background 0.22s,color 0.22s,border-color 0.22s,transform 0.15s;display:inline-block;}
 .btn-primary:hover{background:var(--dark);border-color:var(--dark);color:var(--white);transform:translateY(-2px);}
-.btn-ghost{font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--dark);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;border:2px solid var(--gold);border-radius:4px;background:transparent;transition:all 0.2s;}
-.btn-ghost:hover{background:var(--gold);}
+.btn-ghost{font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 2rem;border:2px solid var(--gold);border-radius:4px;background:transparent;transition:all 0.2s;}
+.btn-ghost:hover{background:var(--gold);color:var(--dark);}
 .btn-ghost::after{content:'→';}
 
 /* ─────────────────────────────────────────────────────────────────
@@ -39,25 +39,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
    diagram of "the partnership engine" + AWS partner credentials.
    This is the change with the highest visual leverage.
    ───────────────────────────────────────────────────────────────── */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:80px;position:relative;overflow:hidden;}
-.hero-left{display:flex;flex-direction:column;justify-content:center;padding:6rem 5vw 6rem 8vw;position:relative;z-index:2;}
-.hero-eyebrow{font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
-.hero-eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--gold-dark);}
-.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(4.5rem,8vw,8.5rem);line-height:0.9;letter-spacing:0.005em;color:var(--dark);margin-bottom:2rem;}
+.hero{min-height:70vh;display:grid;grid-template-columns:1fr 1fr;padding-top:80px;position:relative;overflow:hidden;background:var(--darker);}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(244,180,42,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.06) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;z-index:1;}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:5rem 3rem 5rem 8vw;position:relative;z-index:2;}
+.hero-eyebrow{font-size:0.75rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem;}
+.hero-eyebrow::before{content:'';display:block;width:2rem;height:1px;background:var(--gold);opacity:0.6;}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5.5vw,5.5rem);line-height:0.95;letter-spacing:0.005em;color:var(--white);margin-bottom:1.75rem;}
 .hero-title em{font-style:normal;color:var(--gold);display:block;}
-.hero-sub{font-family:'Fraunces',serif;font-size:clamp(1rem,1.4vw,1.25rem);font-weight:300;line-height:1.7;color:var(--dark);opacity:0.78;max-width:38ch;margin-bottom:2.5rem;}
-.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:3rem;}
+.hero-sub{font-family:'Fraunces',serif;font-size:clamp(1rem,1.3vw,1.2rem);font-weight:300;line-height:1.7;color:var(--white);opacity:0.7;max-width:42ch;margin-bottom:2.25rem;}
+.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-bottom:2.5rem;}
 
 /* trust strip below buttons */
-.hero-trust{display:flex;align-items:center;gap:2rem;padding-top:1.75rem;border-top:1px solid var(--light);}
-.hero-trust-label{font-size:0.62rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--dark);opacity:0.45;}
+.hero-trust{display:flex;align-items:center;gap:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);}
+.hero-trust-label{font-size:0.62rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.4);}
 .hero-trust-logos{display:flex;align-items:center;gap:1.5rem;}
-.hero-trust-logos img{height:180px;opacity:1;}
+.hero-trust-logos img{height:140px;opacity:1;}
 
-/* RIGHT side : engine diagram */
-.hero-right{background:var(--darker);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:3rem;}
-.hero-right::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(244,180,42,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.06) 1px,transparent 1px);background-size:48px 48px;}
-.hero-right::after{content:'';position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(244,180,42,0.14) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);}
+/* RIGHT side : engine diagram, now inside the unified dark canvas */
+.hero-right{position:relative;overflow:visible;display:flex;align-items:center;justify-content:center;padding:3rem 8vw 3rem 3rem;z-index:2;}
+.hero-right::after{content:'';position:absolute;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(244,180,42,0.14) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
 
 .engine{position:relative;z-index:2;width:100%;max-width:520px;}
 .engine-label{font-size:0.6rem;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.6rem;}
@@ -134,59 +134,458 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .svc-step.terminal{background:var(--gold);color:var(--darker);border-color:var(--gold);}
 
 /* ─────────────────────────────────────────────────────────────────
-   LYRAOS : unchanged, just tightened
+   ASSESSMENT : how every engagement starts. The proof artifact section.
    ───────────────────────────────────────────────────────────────── */
-.lyraos{background:var(--white);padding:7rem 8vw;position:relative;overflow:hidden;border-top:1px solid var(--light);}
-.lyraos-inner{position:relative;z-index:2;}
-.lyraos-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem;}
-.lyraos-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,4.5vw,4.5rem);line-height:0.95;letter-spacing:0.02em;color:var(--dark);margin-top:1rem;}
-.lyraos-heading em{font-style:normal;color:var(--gold);}
-.lyraos-intro{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:300;line-height:1.8;color:var(--dark);opacity:0.7;}
-.lyraos-body{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-.lyraos-panels{display:flex;flex-direction:column;gap:1.2rem;}
-.lp{background:var(--darker);padding:1.8rem 2rem;position:relative;overflow:hidden;}
-.lp::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);}
-.lp-label{font-size:0.6rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;}
-.lp-badge{font-size:0.58rem;font-weight:500;letter-spacing:0.08em;background:rgba(244,180,42,0.15);color:var(--gold);padding:0.2rem 0.55rem;border:1px solid rgba(244,180,42,0.3);}
-.lp-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);}
-.lp-kpi{background:var(--darker);padding:0.85rem 0.7rem;}
-.lp-kpi-lbl{font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:0.3rem;}
-.lp-kpi-val{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--gold);line-height:1;}
-.lp-phases{display:flex;align-items:flex-start;margin-top:0.2rem;}
-.lp-ph{display:flex;flex-direction:column;align-items:center;gap:0.3rem;flex:1;}
-.lp-ph-dot{width:1.6rem;height:1.6rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.52rem;font-weight:500;flex-shrink:0;}
-.lp-ph-dot.done{background:var(--gold);color:var(--darker);}
-.lp-ph-dot.now{background:transparent;border:2px solid var(--gold);color:var(--gold);}
-.lp-ph-dot.soon{background:transparent;border:1.5px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.2);}
-.lp-ph-name{font-size:0.5rem;text-align:center;color:rgba(255,255,255,0.25);letter-spacing:0.03em;line-height:1.3;max-width:3.2rem;}
-.lp-ph-name.done{color:rgba(244,180,42,0.65);}
-.lp-ph-name.now{color:rgba(255,255,255,0.55);}
-.lp-line{flex:1;height:1px;background:rgba(255,255,255,0.1);margin-top:0.8rem;}
-.lp-line.done{background:rgba(244,180,42,0.45);}
-.lp-tasks{display:flex;flex-direction:column;gap:0;}
-.lp-task{display:flex;align-items:center;gap:0.65rem;padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.05);}
-.lp-task:last-child{border-bottom:none;}
-.lp-task-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
-.lp-task-dot.done{background:var(--gold);}
-.lp-task-dot.open{border:1.5px solid rgba(255,255,255,0.18);background:transparent;}
-.lp-task-txt{font-size:0.72rem;color:rgba(255,255,255,0.45);flex:1;line-height:1.3;}
-.lp-task-txt.done{color:rgba(255,255,255,0.2);text-decoration:line-through;}
-.lp-task-own{font-size:0.56rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);opacity:0.6;flex-shrink:0;}
-.lp-prog-row{display:flex;align-items:center;gap:0.8rem;margin-top:1rem;}
-.lp-prog-bar{flex:1;height:2px;background:rgba(255,255,255,0.08);}
-.lp-prog-fill{height:100%;width:6%;background:var(--gold);}
-.lp-prog-pct{font-family:'Bebas Neue',sans-serif;font-size:0.85rem;color:var(--gold);}
-.lyraos-benefits{display:flex;flex-direction:column;padding-top:0.5rem;}
-.lyraos-benefit{padding:1.6rem 0;border-bottom:1px solid var(--light);display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:start;}
-.lyraos-benefit:first-child{border-top:1px solid var(--light);}
-.lyraos-benefit-icon{width:2.2rem;height:2.2rem;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.85rem;}
-.lyraos-benefit-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.04em;color:var(--dark);margin-bottom:0.4rem;}
-.lyraos-benefit-body{font-size:0.85rem;font-weight:300;line-height:1.75;color:var(--dark);opacity:0.6;}
-.lyraos-cta-row{margin-top:2rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
-.lyraos-btn{background:var(--gold);color:var(--dark);padding:0.85rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--gold);border-radius:4px;display:inline-block;transition:background 0.22s,color 0.22s,border-color 0.22s,transform 0.15s;}
-.lyraos-btn:hover{background:var(--dark);border-color:var(--dark);color:var(--white);transform:translateY(-2px);}
-.lyraos-note{font-size:0.78rem;color:var(--dark);opacity:0.35;letter-spacing:0.04em;}
-.lyraos-note em{color:var(--gold);opacity:1;font-style:italic;}
+.assessment{background:var(--white);padding:7rem 8vw;position:relative;overflow:hidden;border-top:1px solid var(--light);}
+.assessment-inner{position:relative;z-index:2;}
+.assessment-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem;}
+.assessment-heading{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,4.5vw,4.5rem);line-height:0.95;letter-spacing:0.02em;color:var(--dark);margin-top:1rem;}
+.assessment-heading em{font-style:normal;color:var(--gold);}
+.assessment-intro{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:300;line-height:1.8;color:var(--dark);opacity:0.7;}
+.assessment-intro p + p{margin-top:1rem;}
+.assessment-body{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:stretch;}
+.assessment-screenshot{display:flex;flex-direction:column;gap:1rem;min-width:0;}
+.assessment-caption{font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--dark);opacity:0.45;}
+
+/* The live assessment visual : .av-* namespace.
+   Composition : dark anchor with hero score | bars + gap analysis tiles. */
+.av{
+  --av-dark:#2D2D1E;
+  --av-dark-2:#3A3A28;
+  --av-cream:#F4F0E5;
+  --av-cream-2:#EDE7D6;
+  --av-gold:#F4B42A;
+  --av-gold-soft:rgba(244,180,42,0.18);
+  --av-orange:#E89951;
+  --av-orange-2:#D88440;
+  --av-red:#C24A3D;
+  --av-red-soft:rgba(194,74,61,0.12);
+  --av-green:#3FA372;
+  --av-ink:#2D2D1E;
+  --av-ink-soft:rgba(45,45,30,0.55);
+  --av-ink-mute:rgba(45,45,30,0.32);
+  width:100%;
+  flex:1;
+  min-height:520px;
+  background:var(--av-cream);
+  display:grid;
+  grid-template-columns:34% 1fr;
+  position:relative;
+  overflow:hidden;
+  border-radius:6px;
+  box-shadow:0 24px 60px -12px rgba(45,45,30,0.22),0 4px 12px rgba(45,45,30,0.08),0 0 0 1px rgba(45,45,30,0.04);
+  container-type:inline-size;
+}
+
+/* LEFT : dark identity anchor */
+.av-left{
+  background:var(--av-dark);
+  background-image:linear-gradient(135deg,var(--av-dark) 0%,var(--av-dark-2) 100%);
+  padding:8% 7% 7% 8%;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow:hidden;
+}
+.av-left::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  width:3px;
+  background:var(--av-gold);
+  z-index:2;
+}
+/* Faint grid texture on the dark side, like the rest of the site's dark sections */
+.av-left::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:linear-gradient(rgba(244,180,42,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.04) 1px,transparent 1px);
+  background-size:32px 32px;
+  pointer-events:none;
+}
+/* Ambient gold radial glow behind the score circle */
+.av-left-glow{
+  position:absolute;
+  width:140%;
+  height:55%;
+  bottom:-10%;
+  left:-20%;
+  background:radial-gradient(ellipse at 50% 50%,rgba(244,180,42,0.18) 0%,transparent 60%);
+  pointer-events:none;
+  z-index:1;
+}
+
+.av-brand-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8%;
+  position:relative;
+  z-index:2;
+}
+.av-brand{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(0.8rem,1.5cqi,1.3rem);
+  letter-spacing:0.18em;
+  color:var(--av-gold);
+}
+.av-status-pill{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.42rem,0.6cqi,0.6rem);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--av-orange);
+  background:rgba(232,153,81,0.12);
+  border:1px solid rgba(232,153,81,0.4);
+  padding:0.4em 0.8em;
+  border-radius:2px;
+  font-weight:500;
+}
+
+.av-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.4rem,2.7cqi,2.9rem);
+  line-height:0.95;
+  letter-spacing:0.02em;
+  color:#FFFFFF;
+  margin-bottom:auto;
+  position:relative;
+  z-index:2;
+}
+
+/* Hero score area with orbital ring */
+.av-score-stage{
+  position:relative;
+  z-index:2;
+  display:flex;
+  align-items:center;
+  gap:6%;
+  margin-top:8%;
+}
+.av-score-orbit{
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:120%;
+  height:120%;
+  border-radius:50%;
+  border:1px solid rgba(244,180,42,0.25);
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+}
+.av.live .av-score-orbit{
+  animation:avOrbitPulse 3.6s ease-in-out 1.6s infinite;
+}
+@keyframes avOrbitPulse{
+  0%,100%{transform:translate(-50%,-50%) scale(1);opacity:0.55;}
+  50%{transform:translate(-50%,-50%) scale(1.08);opacity:0.95;}
+}
+.av-score-circle{
+  width:clamp(80px,10.5cqi,150px);
+  height:clamp(80px,10.5cqi,150px);
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#F0A961 0%,var(--av-orange) 60%,#D08344 100%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 6px 22px rgba(232,153,81,0.4),inset 0 -2px 8px rgba(0,0,0,0.12),inset 0 2px 4px rgba(255,255,255,0.18);
+  position:relative;
+  flex-shrink:0;
+}
+.av.live .av-score-circle{
+  animation:avBreath 3.6s ease-in-out 1.6s infinite;
+}
+@keyframes avBreath{
+  0%,100%{box-shadow:0 6px 22px rgba(232,153,81,0.4),inset 0 -2px 8px rgba(0,0,0,0.12),inset 0 2px 4px rgba(255,255,255,0.18);}
+  50%{box-shadow:0 6px 32px rgba(232,153,81,0.7),inset 0 -2px 8px rgba(0,0,0,0.12),inset 0 2px 4px rgba(255,255,255,0.18);}
+}
+.av-score-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(1.7rem,3.8cqi,3.8rem);
+  color:#FFFFFF;
+  line-height:1;
+  letter-spacing:0.02em;
+  transition:filter 0.3s ease;
+  text-shadow:0 1px 2px rgba(0,0,0,0.15);
+}
+.av.flashing .av-score-num{filter:brightness(1.2);}
+.av-score-of{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.46rem,0.6cqi,0.62rem);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.9);
+  font-weight:500;
+  margin-top:0.25em;
+}
+
+.av-score-meta{
+  display:flex;
+  flex-direction:column;
+  gap:0.3em;
+  flex:1;
+  min-width:0;
+}
+.av-score-label{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.55rem,0.78cqi,0.82rem);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:#FFFFFF;
+  font-weight:500;
+}
+.av-score-sub{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.5rem,0.65cqi,0.7rem);
+  color:rgba(255,255,255,0.45);
+  font-weight:300;
+}
+
+/* Status legend at bottom of dark side */
+.av-legend{
+  position:relative;
+  z-index:2;
+  margin-top:6%;
+  display:flex;
+  gap:1.2em;
+  flex-wrap:wrap;
+  padding-top:5%;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+.av-legend-item{
+  display:flex;
+  align-items:center;
+  gap:0.5em;
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.5rem,0.62cqi,0.65rem);
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.55);
+  font-weight:500;
+}
+.av-legend-dot{
+  width:0.55em;
+  height:0.55em;
+  border-radius:50%;
+}
+.av-dot-critical{background:var(--av-red);}
+.av-dot-partial{background:var(--av-orange);}
+.av-dot-strong{background:var(--av-green);}
+
+/* RIGHT : the snapshot bars + gap tiles */
+.av-right{
+  padding:6% 5.5% 5.5% 5.5%;
+  display:flex;
+  flex-direction:column;
+  background:var(--av-cream);
+  position:relative;
+}
+
+.av-snapshot-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  margin-bottom:0.85em;
+}
+.av-snapshot-tag{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.55rem,0.72cqi,0.74rem);
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--av-ink);
+  font-weight:500;
+  display:flex;
+  align-items:center;
+  gap:0.35em;
+}
+.av-snapshot-meta{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.45rem,0.58cqi,0.6rem);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--av-ink-mute);
+  font-weight:500;
+}
+.av-cursor{
+  display:inline-block;
+  width:0.45em;
+  height:0.95em;
+  background:var(--av-gold);
+  box-shadow:0 0 4px rgba(244,180,42,0.8);
+  opacity:0;
+}
+.av.live .av-cursor{
+  animation:avCursorBlink 0.55s steps(2,start) 0.2s 4;
+}
+@keyframes avCursorBlink{
+  0%,49%{opacity:1;}
+  50%,100%{opacity:0;}
+}
+.av-snapshot-rule{
+  height:1px;
+  background:linear-gradient(to right,rgba(45,45,30,0.22) 0%,rgba(45,45,30,0.06) 100%);
+  margin-bottom:4%;
+}
+
+.av-rows{
+  display:flex;
+  flex-direction:column;
+  gap:3.5%;
+}
+.av-row{}
+.av-row-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  margin-bottom:0.45em;
+}
+.av-row-label{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.65rem,0.95cqi,1rem);
+  font-weight:500;
+  color:var(--av-ink);
+  letter-spacing:0.005em;
+}
+.av-row-score{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.65rem,0.95cqi,1rem);
+  font-weight:600;
+  color:var(--av-ink);
+  font-variant-numeric:tabular-nums;
+}
+.av-bar-track{
+  height:clamp(6px,0.85cqi,11px);
+  background:rgba(45,45,30,0.08);
+  border-radius:999px;
+  overflow:hidden;
+  box-shadow:inset 0 1px 2px rgba(45,45,30,0.06);
+}
+.av-bar-fill{
+  height:100%;
+  border-radius:999px;
+  transition:width 1.4s cubic-bezier(0.22,1,0.36,1);
+  position:relative;
+}
+.av-fill-partial{background:linear-gradient(to right,var(--av-orange) 0%,#EFA561 100%);box-shadow:0 0 8px rgba(232,153,81,0.4);}
+.av-fill-partial-2{background:linear-gradient(to right,var(--av-orange-2) 0%,var(--av-orange) 100%);box-shadow:0 0 8px rgba(216,132,64,0.4);}
+.av-fill-critical{background:linear-gradient(to right,var(--av-red) 0%,#D55D4F 100%);box-shadow:0 0 8px rgba(194,74,61,0.4);}
+.av-fill-strong{background:linear-gradient(to right,var(--av-green) 0%,#52B886 100%);box-shadow:0 0 8px rgba(63,163,114,0.4);}
+
+/* Gap analysis tiles : the sell moment */
+.av-gap-section{
+  margin-top:auto;
+  padding-top:5%;
+  border-top:1px solid rgba(45,45,30,0.1);
+}
+.av-gap-tag{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.5rem,0.66cqi,0.68rem);
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:var(--av-ink-soft);
+  font-weight:500;
+  margin-bottom:1em;
+  display:flex;
+  align-items:center;
+  gap:0.6em;
+}
+.av-gap-tag::before{
+  content:'';
+  display:block;
+  width:1.2em;
+  height:1px;
+  background:var(--av-gold);
+}
+.av-gap-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5%;
+}
+.av-gap-tile{
+  background:#FFFFFF;
+  border:1px solid rgba(45,45,30,0.08);
+  border-radius:4px;
+  padding:1em 1em 0.9em;
+  display:flex;
+  flex-direction:column;
+  gap:0.6em;
+  position:relative;
+  overflow:hidden;
+  transition:transform 0.3s ease,box-shadow 0.3s ease;
+}
+.av-gap-tile::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  width:2px;
+  background:var(--av-gold);
+}
+.av-gap-tile-critical::before{background:var(--av-red);}
+.av-gap-tile-critical{background:linear-gradient(135deg,#FFFFFF 0%,var(--av-red-soft) 100%);}
+.av-gap-tile-dim{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.42rem,0.56cqi,0.58rem);
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--av-ink-soft);
+  font-weight:500;
+}
+.av-gap-tile-headline{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(0.85rem,1.4cqi,1.5rem);
+  line-height:1;
+  letter-spacing:0.02em;
+  color:var(--av-ink);
+}
+.av-gap-tile-impact{
+  display:flex;
+  flex-direction:column;
+  gap:0.1em;
+  margin-top:auto;
+  padding-top:0.4em;
+  border-top:1px dashed rgba(45,45,30,0.12);
+}
+.av-gap-tile-impact-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(0.85rem,1.5cqi,1.6rem);
+  line-height:1;
+  letter-spacing:0.02em;
+  color:var(--av-gold);
+  font-variant-numeric:tabular-nums;
+}
+.av-gap-tile-critical .av-gap-tile-impact-num{color:var(--av-red);}
+.av-gap-tile-impact-lbl{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.42rem,0.55cqi,0.58rem);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--av-ink-mute);
+  font-weight:500;
+}
+
+/* Reduced motion : land bars and score directly without animating */
+@media (prefers-reduced-motion: reduce){
+  .av-bar-fill{transition:none;}
+  .av .av-score-circle,.av .av-cursor,.av .av-score-orbit{animation:none;}
+}
+.assessment-points{display:flex;flex-direction:column;padding-top:0.5rem;min-width:0;}
+.assessment-point{padding:1.6rem 0;border-bottom:1px solid var(--light);display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:start;}
+.assessment-point:first-child{border-top:1px solid var(--light);}
+.assessment-point-icon{width:2.2rem;height:2.2rem;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.85rem;}
+.assessment-point-title{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:0.04em;color:var(--dark);margin-bottom:0.4rem;}
+.assessment-point-body{font-size:0.85rem;font-weight:300;line-height:1.75;color:var(--dark);opacity:0.6;}
+.assessment-closer{font-family:'Fraunces',serif;font-size:1rem;font-weight:300;line-height:1.75;color:var(--dark);opacity:0.75;margin-top:2rem;padding-top:1.75rem;border-top:1px solid var(--light);}
+.assessment-cta-row{margin-top:2rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.assessment-btn{background:var(--gold);color:var(--dark);padding:0.85rem 2rem;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border:2px solid var(--gold);border-radius:4px;display:inline-block;transition:background 0.22s,color 0.22s,border-color 0.22s,transform 0.15s;}
+.assessment-btn:hover{background:var(--dark);border-color:var(--dark);color:var(--white);transform:translateY(-2px);}
+.assessment-note{font-size:0.78rem;color:var(--dark);opacity:0.35;letter-spacing:0.04em;}
+.assessment-note em{color:var(--gold);opacity:1;font-style:italic;}
 
 /* ─────────────────────────────────────────────────────────────────
    WHY : kept, but stats removed (they live up top now).
@@ -339,10 +738,10 @@ footer{background:var(--darker);padding:2rem 8vw;display:flex;align-items:center
 }
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;}
-  .hero-right{min-height:480px;padding:2rem;}
+  .hero-right{padding:1rem 8vw 4rem 8vw;}
   .services-grid{grid-template-columns:1fr;}
-  .lyraos-header{grid-template-columns:1fr;gap:2rem;}
-  .lyraos-body{grid-template-columns:1fr;}
+  .assessment-header{grid-template-columns:1fr;gap:2rem;}
+  .assessment-body{grid-template-columns:1fr;}
   .why{grid-template-columns:1fr;}
   .why-credentials{grid-template-columns:1fr 1fr;}
   .playbook-inner{grid-template-columns:1fr;gap:3rem;}
@@ -377,7 +776,7 @@ footer{background:var(--darker);padding:2rem 8vw;display:flex;align-items:center
     <div class="hero-trust fade-up delay-4">
       <span class="hero-trust-label">Built for</span>
       <div class="hero-trust-logos">
-        <img src="https://raw.githubusercontent.com/TierAxis/images/main/aws-logo.png" alt="AWS Partner">
+        <img src="https://raw.githubusercontent.com/TierAxis/images/main/AWS%20PARTNER%20BADGE1.png" alt="AWS Partner Badge">
       </div>
     </div>
   </div>
@@ -511,91 +910,169 @@ footer{background:var(--darker);padding:2rem 8vw;display:flex;align-items:center
   </div>
 </section>
 
-<!-- ── LYRAOS : kept intact ── -->
-<section class="lyraos" id="lyraos">
-  <div class="lyraos-inner">
-    <div class="lyraos-header reveal">
+<!-- ── ASSESSMENT : how every engagement starts ── -->
+<section class="assessment" id="assessment">
+  <div class="assessment-inner">
+    <div class="assessment-header reveal">
       <div>
-        <p class="section-label">Powered by LyraOS</p>
-        <h2 class="lyraos-heading">Every partnership<br>runs on a <em>live<br>command center.</em></h2>
+        <p class="section-label">How every engagement starts</p>
+        <h2 class="assessment-heading">Know what your AWS partnership<br>is worth <em>before you commit.</em></h2>
       </div>
-      <p class="lyraos-intro">LyraOS is the platform we run every partnership on. The workstreams, the milestones, and the sequencing are already built from years of AWS partnership work. You start from experience, and see progress the day we begin.</p>
+      <div class="assessment-intro">
+        <p>Every TierAxis engagement begins with a structured AWS Partnership Readiness Diagnostic. Before any long engagement starts, we score your current AWS position, identify the programs you may already qualify for, surface missed funding and co-sell opportunities, and show the exact moves required to advance your partnership.</p>
+        <p>The diagnostic is calibrated to the kind of partnership you are building. Across every engagement, we look at the areas that decide whether your partnership grows.</p>
+      </div>
     </div>
 
-    <div class="lyraos-body">
-      <div class="lyraos-panels reveal">
-        <div class="lp">
-          <div class="lp-label">Engagement Snapshot <span class="lp-badge">Active</span></div>
-          <div class="lp-kpis">
-            <div class="lp-kpi"><div class="lp-kpi-lbl">AWS Spend</div><div class="lp-kpi-val">$15K/mo</div></div>
-            <div class="lp-kpi"><div class="lp-kpi-lbl">Tech Review</div><div class="lp-kpi-val">Jun 30</div></div>
-            <div class="lp-kpi"><div class="lp-kpi-lbl">Days Left</div><div class="lp-kpi-val">108</div></div>
-          </div>
-          <div class="lp-prog-row">
-            <div style="font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.25);">Overall Progress</div>
-            <div class="lp-prog-bar"><div class="lp-prog-fill"></div></div>
-            <div class="lp-prog-pct">6%</div>
-          </div>
-        </div>
+    <div class="assessment-body">
+      <div class="assessment-screenshot reveal">
+        <div class="av" id="assessmentVisual">
+          <!-- Subtle ambient gold wash on the dark side -->
+          <div class="av-left">
+            <div class="av-left-glow"></div>
+            <div class="av-brand-row">
+              <div class="av-brand">TIERAXIS</div>
+              <div class="av-status-pill">Needs Activation</div>
+            </div>
 
-        <div class="lp">
-          <div class="lp-label">Milestone Timeline</div>
-          <div class="lp-phases">
-            <div class="lp-ph"><div class="lp-ph-dot done">✓</div><div class="lp-ph-name done">Onboarding</div></div>
-            <div class="lp-line done"></div>
-            <div class="lp-ph"><div class="lp-ph-dot done">✓</div><div class="lp-ph-name done">Playbook</div></div>
-            <div class="lp-line"></div>
-            <div class="lp-ph"><div class="lp-ph-dot now">30</div><div class="lp-ph-name now">Foundation &amp; Tech Review</div></div>
-            <div class="lp-line"></div>
-            <div class="lp-ph"><div class="lp-ph-dot soon">60</div><div class="lp-ph-name">Architecture &amp; Co-Sell</div></div>
-            <div class="lp-line"></div>
-            <div class="lp-ph"><div class="lp-ph-dot soon">90</div><div class="lp-ph-name">Co-Sell Scale</div></div>
-          </div>
-        </div>
+            <div class="av-title">READINESS<br>DIAGNOSTIC</div>
 
-        <div class="lp">
-          <div class="lp-label">Tech Review Readiness <span class="lp-badge">1 of 13 done</span></div>
-          <div class="lp-tasks">
-            <div class="lp-task"><div class="lp-task-dot done"></div><div class="lp-task-txt done">AWS architecture inventory complete</div><div class="lp-task-own">TierAxis</div></div>
-            <div class="lp-task"><div class="lp-task-dot open"></div><div class="lp-task-txt">Confirm AWS account ID and partner ID</div><div class="lp-task-own">You</div></div>
-            <div class="lp-task"><div class="lp-task-dot open"></div><div class="lp-task-txt">Initiate Well-Architected Review</div><div class="lp-task-own">TierAxis</div></div>
-            <div class="lp-task"><div class="lp-task-dot open"></div><div class="lp-task-txt">Confirm encryption posture across services</div><div class="lp-task-own">You</div></div>
+            <div class="av-score-stage">
+              <div class="av-score-circle">
+                <div class="av-score-orbit"></div>
+                <div class="av-score-num" data-target="48">0</div>
+                <div class="av-score-of">Out of 100</div>
+              </div>
+              <div class="av-score-meta">
+                <div class="av-score-label">Overall Readiness</div>
+                <div class="av-score-sub">4 dimensions · 1 critical gap</div>
+              </div>
+            </div>
+
+            <div class="av-legend">
+              <div class="av-legend-item"><span class="av-legend-dot av-dot-critical"></span>Critical</div>
+              <div class="av-legend-item"><span class="av-legend-dot av-dot-partial"></span>Partial</div>
+              <div class="av-legend-item"><span class="av-legend-dot av-dot-strong"></span>Strong</div>
+            </div>
+          </div>
+
+          <div class="av-right">
+            <div class="av-snapshot-head">
+              <div class="av-snapshot-tag">Readiness Snapshot<span class="av-cursor"></span></div>
+              <div class="av-snapshot-meta">04 / 12 / 26</div>
+            </div>
+            <div class="av-snapshot-rule"></div>
+
+            <div class="av-rows">
+              <div class="av-row">
+                <div class="av-row-head">
+                  <div class="av-row-label">AWS Engagement and Partnership</div>
+                  <div class="av-row-score" data-target="40">0%</div>
+                </div>
+                <div class="av-bar-track"><div class="av-bar-fill av-fill-partial" data-target="40" style="width:0%;"></div></div>
+              </div>
+              <div class="av-row">
+                <div class="av-row-head">
+                  <div class="av-row-label">Marketplace Readiness</div>
+                  <div class="av-row-score" data-target="60">0%</div>
+                </div>
+                <div class="av-bar-track"><div class="av-bar-fill av-fill-partial-2" data-target="60" style="width:0%;"></div></div>
+              </div>
+              <div class="av-row">
+                <div class="av-row-head">
+                  <div class="av-row-label">Security and Compliance Posture</div>
+                  <div class="av-row-score" data-target="20">0%</div>
+                </div>
+                <div class="av-bar-track"><div class="av-bar-fill av-fill-critical" data-target="20" style="width:0%;"></div></div>
+              </div>
+              <div class="av-row">
+                <div class="av-row-head">
+                  <div class="av-row-label">Sales Strategy and Execution</div>
+                  <div class="av-row-score" data-target="70">0%</div>
+                </div>
+                <div class="av-bar-track"><div class="av-bar-fill av-fill-strong" data-target="70" style="width:0%;"></div></div>
+              </div>
+            </div>
+
+            <div class="av-gap-section">
+              <div class="av-gap-tag">Revenue at Stake</div>
+              <div class="av-gap-grid">
+                <div class="av-gap-tile">
+                  <div class="av-gap-tile-dim">AWS Engagement</div>
+                  <div class="av-gap-tile-headline">No PDM<br>assigned</div>
+                  <div class="av-gap-tile-impact">
+                    <span class="av-gap-tile-impact-num" data-target="15" data-suffix="%">0%</span>
+                    <span class="av-gap-tile-impact-lbl">Revenue lift</span>
+                  </div>
+                </div>
+                <div class="av-gap-tile">
+                  <div class="av-gap-tile-dim">Marketplace</div>
+                  <div class="av-gap-tile-headline">No active<br>listing plan</div>
+                  <div class="av-gap-tile-impact">
+                    <span class="av-gap-tile-impact-num" data-target="50" data-prefix="$" data-suffix="K">$0K</span>
+                    <span class="av-gap-tile-impact-lbl">Per month</span>
+                  </div>
+                </div>
+                <div class="av-gap-tile av-gap-tile-critical">
+                  <div class="av-gap-tile-dim">Security</div>
+                  <div class="av-gap-tile-headline">No DR plan,<br>no FTR</div>
+                  <div class="av-gap-tile-impact">
+                    <span class="av-gap-tile-impact-num">Enterprise</span>
+                    <span class="av-gap-tile-impact-lbl">Deal blocker</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="lyraos-benefits reveal" style="transition-delay:0.12s">
-        <div class="lyraos-benefit">
-          <div class="lyraos-benefit-icon">◎</div>
+      <div class="assessment-points reveal" style="transition-delay:0.12s">
+        <div class="assessment-point">
+          <div class="assessment-point-icon">◎</div>
           <div>
-            <div class="lyraos-benefit-title">A plan that's already built</div>
-            <p class="lyraos-benefit-body">From the first week, your partnership runs on a structure refined through years of AWS partnership work. The plan is ready before we start.</p>
+            <div class="assessment-point-title">Partner standing</div>
+            <p class="assessment-point-body">Where you sit inside the AWS Partner Network, your profile, your certifications, your tier progress, and your visibility to AWS.</p>
           </div>
         </div>
-        <div class="lyraos-benefit">
-          <div class="lyraos-benefit-icon">◈</div>
+        <div class="assessment-point">
+          <div class="assessment-point-icon">◈</div>
           <div>
-            <div class="lyraos-benefit-title">Every task has a name on it</div>
-            <p class="lyraos-benefit-body">What TierAxis is doing and what your team owns is visible at all times. Nothing falls through the cracks because everything has an owner.</p>
+            <div class="assessment-point-title">Technical footprint</div>
+            <p class="assessment-point-body">How much of your current delivery already supports a stronger AWS partner story.</p>
           </div>
         </div>
-        <div class="lyraos-benefit">
-          <div class="lyraos-benefit-icon">▲</div>
+        <div class="assessment-point">
+          <div class="assessment-point-icon">▲</div>
           <div>
-            <div class="lyraos-benefit-title">Ordered for revenue</div>
-            <p class="lyraos-benefit-body">Program access, co-sell motion, seller materials, and Marketplace deals are sequenced in the order that closes business.</p>
+            <div class="assessment-point-title">Co-sell readiness</div>
+            <p class="assessment-point-body">Whether your pipeline is visible to AWS, whether you have a relationship with an AWS partner manager, and whether you have a joint go-to-market motion in place.</p>
           </div>
         </div>
-        <div class="lyraos-benefit">
-          <div class="lyraos-benefit-icon">⚙</div>
+        <div class="assessment-point">
+          <div class="assessment-point-icon">⚙</div>
           <div>
-            <div class="lyraos-benefit-title">One platform. Both teams.</div>
-            <p class="lyraos-benefit-body">You and your TierAxis team work inside the same system. Tasks checked off, contacts in one place, progress tracked in real time.</p>
+            <div class="assessment-point-title">Marketplace and seller visibility</div>
+            <p class="assessment-point-body">Whether AWS field teams can understand, trust, and introduce your offering.</p>
           </div>
         </div>
-        <div class="lyraos-cta-row">
-          <a href="contact.html" class="lyraos-btn">Accelerate your partnership</a>
-          <p class="lyraos-note">Every TierAxis partnership is <em>powered by LyraOS.</em></p>
+        <div class="assessment-point">
+          <div class="assessment-point-icon">◐</div>
+          <div>
+            <div class="assessment-point-title">Revenue and funding alignment</div>
+            <p class="assessment-point-body">Where AWS funding programs and Marketplace programs may apply to work you are already doing.</p>
+          </div>
+        </div>
+        <div class="assessment-point">
+          <div class="assessment-point-icon">◇</div>
+          <div>
+            <div class="assessment-point-title">Operational readiness</div>
+            <p class="assessment-point-body">Whether your delivery model, documentation, ownership, and cadence can support tier advancement and funded execution.</p>
+          </div>
+        </div>
+        <p class="assessment-closer">The diagnostic ends with a plan. Every gap is tied to an owner, a deliverable, and a target date, so you leave with a clear view of what to fix first, what it is worth, and how TierAxis can carry the work forward.</p>
+        <div class="assessment-cta-row">
+          <a href="contact.html" class="assessment-btn">See where you stand</a>
         </div>
       </div>
     </div>
@@ -617,19 +1094,9 @@ footer{background:var(--darker);padding:2rem 8vw;display:flex;align-items:center
       <p class="why-cred-body">Operators who've run alliance, co-sell, and Marketplace from the partner side.</p>
     </div>
     <div class="why-cred">
-      <div class="why-cred-num">$50M+</div>
-      <div class="why-cred-label">In partner-influenced revenue</div>
-      <p class="why-cred-body">Pipeline, Marketplace deals, and program funding unlocked across prior roles.</p>
-    </div>
-    <div class="why-cred">
       <div class="why-cred-num">100%</div>
       <div class="why-cred-label">Operator-led work</div>
       <p class="why-cred-body">Senior operators only. The people you scope with are the people running the work.</p>
-    </div>
-    <div class="why-cred">
-      <div class="why-cred-num">1</div>
-      <div class="why-cred-label">Platform every engagement runs on</div>
-      <p class="why-cred-body">LyraOS keeps both sides on the same milestones, tasks, and timeline.</p>
     </div>
   </div>
 </section>
@@ -731,6 +1198,104 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 reveals.forEach(el => observer.observe(el));
+
+/* Assessment visual : animate bars + count up score on first scroll into view */
+(function(){
+  const visual = document.getElementById('assessmentVisual');
+  if (!visual) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let played = false;
+
+  function jarvisEase(t){ return 1 - Math.pow(1 - t, 3); }
+
+  function play(){
+    if (played) return;
+    played = true;
+    visual.classList.add('live');
+
+    if (reduce){
+      // Land everything at final values immediately
+      visual.querySelectorAll('.av-bar-fill').forEach(b => {
+        b.style.width = b.dataset.target + '%';
+      });
+      visual.querySelectorAll('.av-row-score[data-target]').forEach(el => {
+        el.textContent = el.dataset.target + '%';
+      });
+      const scoreEl = visual.querySelector('.av-score-num[data-target]');
+      if (scoreEl) scoreEl.textContent = scoreEl.dataset.target;
+      visual.querySelectorAll('.av-gap-tile-impact-num[data-target]').forEach(el => {
+        const prefix = el.dataset.prefix || '';
+        const suffix = el.dataset.suffix || '';
+        el.textContent = prefix + el.dataset.target + suffix;
+      });
+      return;
+    }
+
+    // Bars : staggered fill
+    const bars = visual.querySelectorAll('.av-bar-fill');
+    bars.forEach((b, i) => {
+      setTimeout(() => { b.style.width = b.dataset.target + '%'; }, 100 * i);
+    });
+
+    // Per-row score numbers : count up alongside their bar
+    const rowScores = visual.querySelectorAll('.av-row-score[data-target]');
+    rowScores.forEach((el, i) => {
+      const target = parseInt(el.dataset.target,10);
+      const start = performance.now() + (100 * i);
+      const dur = 1400;
+      function tick(now){
+        const t = Math.max(0, Math.min(1, (now - start) / dur));
+        const v = Math.round(target * jarvisEase(t));
+        el.textContent = v + '%';
+        if (t < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+
+    // Gap tile impact numbers : count up after bars land
+    const gapImpacts = visual.querySelectorAll('.av-gap-tile-impact-num[data-target]');
+    gapImpacts.forEach((el, i) => {
+      const target = parseInt(el.dataset.target,10);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const start = performance.now() + 700 + (140 * i);
+      const dur = 1100;
+      function tickImpact(now){
+        const t = Math.max(0, Math.min(1, (now - start) / dur));
+        const v = Math.round(target * jarvisEase(t));
+        el.textContent = prefix + v + suffix;
+        if (t < 1) requestAnimationFrame(tickImpact);
+      }
+      requestAnimationFrame(tickImpact);
+    });
+
+    // Overall score : count up with a brightness flash at 30%
+    const scoreEl = visual.querySelector('.av-score-num[data-target]');
+    if (scoreEl){
+      const target = parseInt(scoreEl.dataset.target,10);
+      const start = performance.now() + 200;
+      const dur = 1400;
+      let flashed = false;
+      function tickScore(now){
+        const t = Math.max(0, Math.min(1, (now - start) / dur));
+        const v = Math.round(target * jarvisEase(t));
+        scoreEl.textContent = v;
+        if (!flashed && t >= 0.3){
+          flashed = true;
+          visual.classList.add('flashing');
+          setTimeout(() => visual.classList.remove('flashing'), 220);
+        }
+        if (t < 1) requestAnimationFrame(tickScore);
+      }
+      requestAnimationFrame(tickScore);
+    }
+  }
+
+  const avObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) play(); });
+  }, { threshold: 0.35 });
+  avObs.observe(visual);
+})();
 
 function handlePlaybookSubmit(event) {
   event.preventDefault();
