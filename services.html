@@ -178,6 +178,42 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .lets-talk-email:hover{color:var(--gold);}
 .lets-talk-email::before{content:'✉';}
 
+/* PHASES : how engagements run — connected process flow */
+.phases{background:var(--dark);padding:7rem 8vw;border-bottom:none;position:relative;overflow:hidden;}
+.phases::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(244,180,42,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(244,180,42,0.05) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;}
+.phases::after{content:'PROCESS';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:22vw;color:rgba(255,254,254,0.025);bottom:-3vw;left:-1vw;line-height:1;pointer-events:none;letter-spacing:0.02em;}
+.phases-header{max-width:760px;margin:0 auto 4.5rem;text-align:center;position:relative;z-index:2;}
+.phases-header .section-label{justify-content:center;color:var(--gold);}
+.phases-header .section-label::before{display:none;}
+.phases-header h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,4vw,3.6rem);line-height:1;letter-spacing:0.02em;color:var(--white);}
+.phases-header h2 em{font-style:normal;color:var(--gold);}
+.phases-header p{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:300;line-height:1.8;color:rgba(255,254,254,0.6);margin-top:1.25rem;}
+
+.phase-track{position:relative;z-index:2;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;}
+/* connective spine behind the cards */
+.phase-track::before{content:'';position:absolute;top:3.4rem;left:8%;right:8%;height:1px;background:linear-gradient(90deg,transparent,rgba(244,180,42,0.35),rgba(244,180,42,0.35),transparent);z-index:0;}
+
+.phase-cell{position:relative;z-index:1;background:rgba(255,254,254,0.03);border:1px solid rgba(244,180,42,0.18);border-radius:4px;padding:2.25rem 1.6rem 1.9rem;overflow:hidden;transition:transform 0.4s cubic-bezier(.2,.7,.2,1),border-color 0.4s,background 0.4s,box-shadow 0.4s;}
+/* big ghost number */
+.phase-cell::after{content:attr(data-n);position:absolute;top:-1.2rem;right:0.4rem;font-family:'Bebas Neue',sans-serif;font-size:6.5rem;line-height:1;color:rgba(244,180,42,0.07);pointer-events:none;transition:color 0.4s,transform 0.4s;}
+/* gold top accent that fills on hover */
+.phase-cell .phase-accent{position:absolute;top:0;left:0;height:3px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.45s ease;}
+.phase-cell:hover{transform:translateY(-8px);background:rgba(244,180,42,0.06);border-color:rgba(244,180,42,0.5);box-shadow:0 22px 48px -18px rgba(0,0,0,0.55);}
+.phase-cell:hover::after{color:rgba(244,180,42,0.16);transform:translateY(2px);}
+.phase-cell:hover .phase-accent{transform:scaleX(1);}
+
+/* numbered node sitting on the spine */
+.phase-node{width:2.6rem;height:2.6rem;border-radius:50%;background:var(--dark);border:1px solid rgba(244,180,42,0.45);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:1.15rem;color:var(--gold);margin-bottom:1.4rem;position:relative;z-index:2;transition:background 0.4s,color 0.4s,box-shadow 0.4s;}
+.phase-cell:hover .phase-node{background:var(--gold);color:var(--dark);box-shadow:0 0 0 6px rgba(244,180,42,0.12);}
+
+.phase-tag{font-family:'Bebas Neue',sans-serif;font-size:0.68rem;letter-spacing:0.22em;color:rgba(244,180,42,0.7);margin-bottom:0.6rem;}
+.phase-name{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:0.03em;color:var(--white);line-height:1;margin-bottom:1rem;}
+.phase-body{font-size:0.82rem;line-height:1.7;color:rgba(255,254,254,0.58);position:relative;z-index:2;}
+.phase-meta{max-width:1100px;margin:3rem auto 0;text-align:center;font-family:'Fraunces',serif;font-style:italic;font-size:0.98rem;font-weight:300;color:rgba(255,254,254,0.55);position:relative;z-index:2;}
+
+@media(max-width:1100px){.phase-track{grid-template-columns:1fr 1fr;}.phase-track::before{display:none;}}
+@media(max-width:600px){.phase-track{grid-template-columns:1fr;}}
+
 footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
 .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:0.08em;color:rgba(255,254,254,0.4);text-decoration:none;}
 .footer-logo span{color:var(--gold);}
@@ -403,6 +439,46 @@ footer{background:#3a3a33;padding:2rem 8vw;display:flex;align-items:center;justi
     </div>
     <div class="service-callout dark-callout" style="margin-top:2.5rem">We get to know the initiative first. Then we build the team around it.</div>
   </div>
+</section>
+
+<!-- ── HOW ENGAGEMENTS RUN ── -->
+<section class="phases" id="how">
+  <div class="phases-header reveal">
+    <p class="section-label">How Engagements Run</p>
+    <h2>Assess. Scope. <em>Activate. Handover.</em></h2>
+    <p>Every engagement is governed by a signed statement of work and runs on a weekly status cadence. A typical engagement runs ninety to one hundred twenty days, subject to client cooperation and AWS review cycles.</p>
+  </div>
+  <div class="phase-track">
+    <div class="phase-cell reveal" data-n="01">
+      <span class="phase-accent"></span>
+      <div class="phase-node">01</div>
+      <div class="phase-tag">PHASE 01</div>
+      <div class="phase-name">Assess &amp; Scope</div>
+      <p class="phase-body">AWS Partnership Readiness Diagnostic, intake, stakeholder identification, SOW execution, AWS Partner Central and account access review, and confirmation of scope and success metrics.</p>
+    </div>
+    <div class="phase-cell reveal" data-n="02" style="transition-delay:0.08s;">
+      <span class="phase-accent"></span>
+      <div class="phase-node">02</div>
+      <div class="phase-tag">PHASE 02</div>
+      <div class="phase-name">Foundation</div>
+      <p class="phase-body">AWS Partner Network registration, Marketplace seller setup, listing structure and pricing, billing and Private Offer configuration, and security and compliance documentation alignment.</p>
+    </div>
+    <div class="phase-cell reveal" data-n="03" style="transition-delay:0.16s;">
+      <span class="phase-accent"></span>
+      <div class="phase-node">03</div>
+      <div class="phase-tag">PHASE 03</div>
+      <div class="phase-name">Activation</div>
+      <p class="phase-body">Listing publication and verification, Private Offer operationalization, solution positioning, AWS field team identification, co-sell registration, and funding program mapping.</p>
+    </div>
+    <div class="phase-cell reveal" data-n="04" style="transition-delay:0.24s;">
+      <span class="phase-accent"></span>
+      <div class="phase-node">04</div>
+      <div class="phase-tag">PHASE 04</div>
+      <div class="phase-name">Handover</div>
+      <p class="phase-body">Success metrics reviewed against the SOW, offboarding documentation covering activated programs and configured assets, and acceptance sign-off.</p>
+    </div>
+  </div>
+  <p class="phase-meta reveal">Weekly status reporting throughout. Feedback collected at every milestone and at engagement close.</p>
 </section>
 
 <section class="lets-talk" id="talk">
