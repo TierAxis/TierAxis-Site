@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/marketplace/fulfillment"
+  to = "/.netlify/functions/marketplace-fulfillment"
+  status = 200
