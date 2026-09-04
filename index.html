@@ -114,7 +114,14 @@
     #engagement .case-lede em{display:block;margin-top:7px;color:var(--cream);font-size:30px;line-height:1.18;font-weight:700;font-style:italic}
     @media(max-width:1050px){#engagement{padding:54px}#engagement .case-copy{padding:54px}}
     @media(max-width:780px){#engagement{padding:30px}#engagement .case{grid-template-columns:1fr}#engagement .case-copy{padding:50px 30px}#engagement .case-lede em{font-size:26px}}
-  </style>
+  
+    footer.simple-footer{display:flex;align-items:center;justify-content:space-between;gap:48px;padding:46px 48px;background:#34342f;color:rgba(245,242,232,.48)}
+    .simple-footer .brand{flex:0 0 auto;color:rgba(245,242,232,.52)}
+    .simple-footer nav{display:flex;align-items:center;justify-content:flex-end;gap:42px}
+    .simple-footer nav a{font-family:Inter,Arial,sans-serif;font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:inherit}
+    .simple-footer nav a:hover{color:var(--cream)}
+    @media(max-width:900px){footer.simple-footer{align-items:flex-start;flex-direction:column;padding:40px 30px}.simple-footer nav{justify-content:flex-start;flex-wrap:wrap;gap:20px 28px}}
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -143,7 +150,7 @@
 
     <section class="section dark contact" id="contact"><div class="contact-inner"><p class="eyebrow">Start a conversation</p><h2>Tell us what you are funding, building, selling, or improving.</h2><p class="body-copy">Bring us the priority, constraint, or opportunity. We will define the right starting point, identify the resources that can change the economics or pace, and organize the work required to move forward.</p></div><form class="contact-form" name="homepage-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field"><input type="hidden" name="form-name" value="homepage-contact"><p style="display:none"><label>Leave this field empty: <input name="bot-field"></label></p><div class="form-field"><label for="contact-name">Name</label><input id="contact-name" name="name" type="text" autocomplete="name" required></div><div class="form-field"><label for="contact-email">Work email</label><input id="contact-email" name="email" type="email" autocomplete="email" required></div><div class="form-field full"><label for="contact-company">Company</label><input id="contact-company" name="company" type="text" autocomplete="organization"></div><div class="form-field full"><label for="contact-message">What are you working on?</label><textarea id="contact-message" name="message" required></textarea></div><button type="submit">Start the conversation</button></form></section>
   </main>
-  <footer><div><a class="brand" href="#top">TIER<b>AXIS</b></a></div><nav aria-label="Footer navigation"><a href="#services">What we do</a><a href="#work">Our work</a><a href="#market">Events</a></nav><div><p>info@tieraxis.com</p><p>© 2026 TierAxis</p></div></footer>
+  <footer class="simple-footer"><a class="brand" href="https://tieraxis.com/">TIER<b>AXIS</b></a><nav aria-label="Footer navigation"><a href="https://tieraxis.com/">Home</a><a href="https://tieraxis.com/services.html">Services</a><a href="https://tieraxis.com/about.html">About</a><a href="https://tieraxis.com/events/tech-week/">Events</a><a href="https://tieraxis.com/contact.html">Contact</a><a href="https://tieraxis.com/privacy.html">Privacy Policy</a><a href="https://tieraxis.com/terms.html">Terms</a></nav></footer>
 </div>
 </body>
 </html>
